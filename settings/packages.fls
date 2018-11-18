@@ -1,0 +1,6 @@
+PWD /Users/Apple/Documents/GitHub/LaTeX-Files/note for quantum mechanics/settings
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt
+INPUT packages.tex
+OUTPUT packages.log

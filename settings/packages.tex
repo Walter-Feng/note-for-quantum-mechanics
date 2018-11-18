@@ -1,0 +1,73 @@
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs} % Top and bottom rules for table不【
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+\usepackage{amsfonts, amsmath, amssymb} % For math fonts, symbols and environments
+\usepackage{wrapfig} % Allows wrapping text around tables and figures
+\usepackage[centering]{geometry}
+\geometry{top=25.4mm, bottom=25.4mm, left=25.4mm, right=25.4mm}
+\usepackage[normalem]{ulem}
+\usepackage{titlesec}
+\usepackage{xeCJK}
+\setCJKmainfont[ItalicFont={KaiTi}, BoldFont={SimHei}]{KaiTi}
+\usepackage{textcomp}
+\usepackage[final]{pdfpages}
+\usepackage{chemfig}
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra}
+\usepackage{setspace}
+\usepackage{listings}
+\usepackage{xcolor} % 定制颜色
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\lstset{
+backgroundcolor=\color{white},      % choose the background color
+basicstyle=\footnotesize\ttfamily,  % size of fonts used for the code
+columns=fullflexible,
+tabsize=4,
+breaklines=true,               % automatic line breaking only at whitespace
+captionpos=b,                  % sets the caption-position to bottom
+commentstyle=\color{mygreen},  % comment style
+escapeinside={\%*}{*)},        % if you want to add LaTeX within your code
+keywordstyle=\color{blue},     % keyword style
+stringstyle=\color{mymauve}\ttfamily,  % string literal style
+frame=single,
+rulesepcolor=\color{red!20!green!20!blue!20},
+% identifierstyle=\color{red},
+language=Mathematica,
+}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}  
+\newtheorem{definition}{Definition}[section]
+\newtheorem{proof}{Proof}[section]  
+\numberwithin{equation}{section}
+
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bracket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\bracketl}[3]{\langle #1 | #2 | #3 \rangle}
+\newcommand{\func}{\mathrm \,}
+\newcommand{\define}[2]{
+	\begin{definition}
+	\begin{description}
+	\item[#1]
+	#2
+	\end{description}
+	\end{definition}
+}
+\newcommand{\mean}[1]{\langle #1 \rangle}
+
+\newcommand{\sch}{Schr\"odinger}
+\newcommand{\grad}{\nabla}
+\newcommand{\ueq}{\neq}
+
+\newcommand{\p}{\textbf{p}}
+\newcommand{\x}{\textbf{x}}
+
+\newcommand{\y}{\textbf{y}}
+\newcommand{\z}{\textbf{z}}

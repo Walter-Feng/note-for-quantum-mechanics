@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper,openany,twoside]{book}
+\input{settings/packages.tex}
+\setlength{\parindent}{2em}
+
+\begin{document}
+\include{preface/cover}
+
+%-------------------------------------目录部分------------------------------------------
+\setcounter{page}{1}   %重新开始页码
+%-------------------下面善三行去掉了目录首页页码---------------------
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+%-------------------------------------------------------------------------
+\tableofcontents                                    %目录
+%\addtocontents{toc}{\protect\begin{multicols}{2}}       %目录分两栏开始
+\mainmatter\medskip    %前言和目录页码结束，正文重新开始设置页码
+
+ 
+%-----------------------------------------------------------------------------------
+
+
+\include{chapters/chap1}
+\include{chapters/chap3}
+
+\include{chapters/chap5}
+\include{chapters/chap6}
+\include{chapters/articles}
+\include{chapters/QHD}
+ 
+
+
+ 
+
+
+
+%----------------------------------------------------------------------------------
+
+
+
+\clearpage
+\end{document}

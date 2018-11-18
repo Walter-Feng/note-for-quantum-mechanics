@@ -1,0 +1,7 @@
+PWD /Users/Apple/Documents/GitHub/LaTeX-Files/note for quantum mechanics/chapters
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt
+INPUT chap5.tex
+OUTPUT chap5.log
+OUTPUT chap5.xdv

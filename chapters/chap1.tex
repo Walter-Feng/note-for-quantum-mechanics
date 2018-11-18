@@ -1,0 +1,1317 @@
+\chapter{\emph{The Principles of Quantum Mechanics} by Dirac.}
+
+\section{Superposition and Indeterminacy}
+\subsection{Notes}
+\begin{enumerate}
+\item The intermediate character of the state formed by superposition expresses itself through the probability of a particular result for an observation being intermediate between the corresponding probabilities for the original states, not trough the result itself being intermediate between the corresponding results for the original states.
+
+\item Each state of a dynamical system at a particular time corresponds to a ket vector, the correspondences being such that if a state results from the superposition of certain other states, its corresponding ket vector is expressible linearly in terms of the corresponding ket vectors of the other states, and conversely.
+
+\item If the ket vector corresponding to a state is multiplied by any complex number except $0$, the resulting ket vector will correspond to the same state.\footnote{All the states of the dynamical system are in one-one correspondence with all the possible directions for a ket vector, no distinction being made between the directions of the ket vectors $|A \rangle$ and $-|A \rangle$.}
+
+\end{enumerate}
+
+
+
+%----------------------------------------------------------------------------------
+
+\section{Dynamical Variables and Observables}
+\subsection{Definitions}
+\begin{definition}
+\begin{description}
+	\item[Linear Operator]
+	A linear operator $\alpha$ satisfies:
+	\begin{equation}
+	\alpha \{\ket{A}+\ket{A'}\}  =  \alpha \ket{A} + \alpha \ket{A'}, \\
+	\alpha \{ c \ket{A}\}  =  c \alpha \ket{A}
+	\end{equation}
+\end{description}
+\end{definition}
+\begin{definition}
+\begin{description}
+	\item[Real Linear Operator]
+	A linear operator that equals its adjoint.
+\end{description}
+\end{definition}
+\begin{definition}
+\begin{description}
+	\item[Observable]
+	A real dynamical variable whose eigenstates form a complete set; any quantity that can be measured is an observable.
+\end{description}
+\end{definition}
+\define{Hilbert space}{The space of bra or ket vectors when the vectors are restricted to be of finite length and to have finite scalar products.}
+
+%----------------------------------------------------------------------------------
+\subsection{Notes}
+\begin{enumerate}
+\item If the dynamical system is in an eigenstate of a real dynamical variable $\xi$, belonging to the eigenvalue $\xi'$, then a measurement of $\xi$ will certainly give as result the number $\xi'$. Conversely, if the system is in a state such that a measurement of a real dynamical variable $\xi$ is certain to give one particular result (instead of giving one or other of several possible results according to a probability law, as is in general the case), then the state is an eigenstate of $\xi$ and the result of the measurement is the eigenvalue of $\xi$ to which this eigenstate belongs.
+
+\item When we measure a real dynamical variable $\xi$, the disturbance involved in the act of measurement causes a jump in the state of the dynamical system. 
+
+From physical continuity, if we make a second measurement of the same dynamical variable $\xi$ immediately after the first, the result of the second measurement must be the same as that of the first. Thus after the first measurement has been made, there is no indeterminacy in the result of the second. Hence, after the first measurement has been made, the system is in an eigenstate of the dynamical variable $\xi$, the eigenvalue it belongs to being equal to the result of the first measurement. This conclusion must still hold if the second measurement is not actually made. In this way we see that a measurement always causes the system to jump into an eigenstate of the dynamical variable that is being measured, the eigenvalue this eigenstate belongs to being equal to the result of the measurement.
+
+\item If the measurement of the observable $\xi$ for the system in the state corresponding to $\ket{x}$ is made a large number of times, the average of all the results obtained will be $\bracketl{x}{\xi}{x}$, provided $\ket{x}$ is normalized.
+
+\item
+\begin{equation}
+P_a = \bracketl{x}{\delta_{\xi a}}{x}
+\end{equation}
+
+\item
+If certain observables commute, there exist states for which they all have particular values. Thus one can give a meaning to several commuting observables having values at the same time. Further, we see that for any state one can give a meaning to the probability of particular results being obtained for simultaneous measurements of several commuting observables.
+
+\item Any two or more commuting observables may be counted as a single observable, the result of a measurement of which consists of two or more numbers.
+\end{enumerate}
+
+%-----------------------------------------------------------------------------------
+\subsection{Theorems and Proofs}
+\begin{theorem}
+
+If $\xi$ is a real linear operator, and
+\begin{equation}
+\xi ^m |P \rangle =0
+\label{degeneration}
+\end{equation}
+for a particular ket $|P \rangle$, $m$ being a positive integer, then
+\begin{equation*}
+\xi |P \rangle =0
+\end{equation*}
+\label{degenerationtheorem}
+\end{theorem}
+
+\begin{proof}
+
+To prove this theorem, take first the case when m = 2. Equation \ref{degeneration} then gives
+\begin{equation}
+\langle P | \xi ^2 | P \rangle =0
+\end{equation}
+
+showing that the ket $\xi|P\rangle$ multiplied by the conjugate imaginary bra $\langle P|\xi$ is zero. Considering that 
+\begin{equation*}
+\langle P | \xi ^2 | P \rangle  =  \langle P | \xi \, \xi | P \rangle
+\end{equation*}
+
+Thus $\xi|P\rangle$ must be zero. Thus the theorem is proved for $m = 2$.
+
+Now take $m > 2$ and put
+
+\begin{equation*}
+\xi ^{m-2} | P \rangle = |Q \rangle
+\end{equation*}
+
+which transforms the equation \ref{degeneration} into
+\begin{equation*}
+\xi ^2 |Q \rangle = 0
+\end{equation*}
+which leads to
+\begin{equation*}
+\xi|Q \rangle =0
+\Rightarrow \xi ^{m-1} |P \rangle = 0
+\end{equation*}
+
+Thus the whole theorem is proved.
+
+\end{proof}
+
+\begin{theorem}
+Two eigenvectors of a real dynamical variable belonging to different eigenvalues are orthogonal.
+\label{orthogonaltheorem}
+\end{theorem}
+
+\begin{proof}
+let $|\xi ' \rangle$ and $|\xi '' \rangle$ be two eigenkets of the real dynamical variable $\xi$, belonging to the eigenvalues $\xi '$ and $\xi ''$ respectively. Then we have the equations
+\begin{equation}
+\xi | \xi ' \rangle = \xi ' |\xi ' \rangle
+\label{orthogonaltheorem.1}
+\end{equation}
+\begin{equation}
+\xi | \xi '' \rangle = \xi '' |\xi '' \rangle
+\label{orthogonaltheorem.2}
+\end{equation}
+Taking the conjugate imaginary of \ref{orthogonaltheorem.1}, we get
+\begin{equation*}
+\langle \xi ' | \xi = \xi ' \langle \xi ' |
+\end{equation*}
+Thus
+\begin{equation*}
+\langle \xi ' | \xi | \xi '' \rangle = \xi ' \langle \xi ' | \xi '' \rangle
+\end{equation*}
+While \ref{orthogonaltheorem.2} gives
+\begin{equation*}
+\langle \xi ' | \xi | \xi '' \rangle = \xi '' \langle \xi ' | \xi '' \rangle
+\end{equation*}
+
+Hence
+
+\begin{equation}
+(\xi ' - \xi '') \langle \xi ' | \xi '' \rangle = 0
+\end{equation}
+
+If $\xi' \neq \xi ''$, $\langle \xi ' | \xi \rangle$ = $0$.
+\end{proof}
+
+\begin{theorem}
+If a real linear operator $\xi$ satisfies an algebraic equation
+\begin{equation}
+\phi (\xi) = \xi ^ n + a_1 \xi ^{n-1} + a_2 \xi ^{n-2} + ... + a_n =0,
+\label{completeset}
+\end{equation}
+the coefficients $a$ being numbers. Let \ref{completeset} be the simplest\footnote{其中'simplest'应指代为最低阶。} algebraic equation that $\xi$ satisfies. Then
+
+\begin{enumerate}
+	\item The number of eigenvalues of $\xi$ is $n$.
+	\item There are so many eigenkets of $\xi$ that any ket whatever can be expressed as a sum of such eigenkets.
+\end{enumerate}
+\label{completesettheorem}
+\end{theorem}
+
+\begin{proof}
+The algebraic form $\psi(\xi)$ can be factorized into $n$ linear factors, the result being 
+
+\begin{equation}
+\psi (\xi) = (\xi - c_1) (\xi - c_2)(\xi - c_3)....(\xi - c_n)
+\end{equation}
+where the c's are numbers, not assumed to be all different.
+
+Let the quotient when $\psi{\xi}$ is divided by $(\xi - c_r)$ be $\chi_r (\xi)$, so that 
+\begin{equation*}
+\psi(\xi) = (\xi - c_r) \chi_r (\xi) (r = 1, 2, 3,....., n)
+\end{equation*}
+
+Then for any ket $\ket{P}$,
+\begin{equation}
+(\xi - c_r) \chi_r(\xi) \ket{P} = \psi (\xi) \ket{P} = 0
+\label{completeset.2}
+\end{equation}
+
+Now $\chi_r (\xi) \ket{P}$ cannot vanish for every ket $\ket{P}$, as otherwise $\chi_r(\xi)$ itself would vanish and we should have $\xi$ satisfying an algebraic equation of degree $n-1$, which would contradict the assumption that \ref{completeset} is the simplest equation that $\xi$ satisfies.
+
+If we choose $\ket{P}$ so that $\chi_r(\xi) \ket{P}$ does not vanish, then equation \ref{completeset.2} shows that $\chi_r(\xi) \ket{P}$ is an eigenket of $\xi$, belonging to the eigenvalue $c_r$. The argument holds for each value of r from $1$ to $n$.
+
+No other number can be an eigenvalue of $\xi$, since if $\xi'$ is any eigenvalue, belonging to an eigenket $\ket{\xi'}$,
+\begin{equation*}
+\xi{\xi'}=\xi'\ket{\xi'}
+\end{equation*}
+and we can deduce
+\begin{equation*}
+\phi (\xi) \ket{\xi'}=\phi(\xi') \ket{\xi'}
+\end{equation*}
+considering that $\psi(\xi)=0$, we must have $\phi(\xi')=0$, which means that $\xi'$ also belongs to the existing eigenvalues.
+
+To complete the proof of the first property we must verify that the $c$'s are all different. Suppose the $c$'s are not all different and $c_s$ occurs $m$ times ($m>1$). Then $\phi(\xi)$ is of the form
+\begin{equation*}
+\phi(\xi) = (\xi - c_s) ^m \theta(\xi),
+\end{equation*}
+with $\theta(\xi)$ a rational integral function of $\xi$. Equation \ref{completeset} reveals that
+\begin{equation}
+(\xi - c_s) ^m \theta ( \xi ) \ket{A} = 0
+\end{equation}
+for any ket $\ket{A}$. Since $c_s$ is an eigenvalue of $\xi$ it must be real. $\xi - c_s$ for $\xi$ and $\theta ( \xi ) \ket{A}$ for $\ket{P}$. With regard of theorem \ref{degenerationtheorem} we can infer that
+\begin{equation*}
+(\xi - c_s) \theta(\xi) \ket{A} = 0.
+\end{equation*}
+Since the ket $\ket{A}$ is arbitrary,
+\begin{equation*}
+(\xi - c_s) \theta( \xi ) = 0,
+\end{equation*}
+which contradicts the assumption that \ref{completeset} is the simplest equation that $\xi$ satisfies. The first property is proved.
+
+Let $\chi _r (c_r)$ be the number obtained when $c_r$ is substituted for $\xi$ in the algebraic expression $\chi_r(\xi)$. Since the $c$'s are all different, $\chi_r(c_r)$ cannot vanish. Consider now the expression
+\begin{equation}
+\sum_r \frac{\chi_r (\xi)}{\chi_r (c_r)} -1.
+\label{completeset.3}
+\end{equation}
+
+If $c_s$ is substituted for $\xi$ here, every term in the sum vanishes except the one for which $r=s$, since $\chi_r(\xi)$ contains $(\xi - c_s)$ as a factor when $r \neq s$, and the term for which $r=s$ is unity, so the whole expression vanishes. Thus the expression \ref{completeset.3} vanishes when $\xi$ is put equal to any of the $n$ numbers $c_1,c_2,....,c_n$. Since, however, the expression is only of degree $n-1$ in $\xi$, it must vanish identically. If we now apply the linear operator \ref{completeset.3} to an arbitrary ket $\ket{P}$ and equate the result to $0$, we get
+\begin{equation}
+\ket{P} = \sum_r \frac{1}{\chi_r (c_r)} \chi_r(\xi) \ket{P}.
+\label{completeset.4}
+\end{equation}
+Each term in the sum on the right here is, according to \ref{completeset.2}, an eigenket of $\xi$, if it does not vanish. Equation \ref{completeset.4} thus expresses the arbitrary ket $\ket{P}$ as a sum of eigenkets of $\xi$, and thus the second property is proved.
+\end{proof}
+
+\begin{theorem}
+The expansion of a ket $\ket{P}$ in the form of the right-hand side of \ref{extension} is unique.
+\end{theorem}
+
+\begin{proof}
+Suppose that two different expansions of $\ket{P}$ are possible. Then by subtracting one from the other, we get an equation of the form
+\begin{equation}
+0=\int \ket{\xi ' a} \, d\xi' + \sum_s \ket{\xi^s b},
+\label{extensionassumption}
+\end{equation}
+$a$ and $b$ being used as new labels for the eigenvectors, and the sum
+over $s$ including all terms left after the subtraction of one sum from
+the other. If there is a term in the sum in \ref{extensionassumption} referring to an eigenvalue $\xi^t$ not in the range, we get, by multiplying \ref{extensionassumption} on the left by $\bra{\xi^t b}$ and using the orthogonality theorem \ref{orthogonaltheorem},
+\begin{equation*}
+0 = \bracket{\xi^tb}{\xi^tb}
+\end{equation*}
+which is contradictory. Again, if the integrand in \ref{extensionassumption} does not vanish for some eigenvalue $\xi''$ not equal to any $\xi^s$ occuring in the sum, we get, by multiplying \ref{extensionassumption} on the left by $\bra{\xi''a}$ and using the orthogonality theorem \ref{orthogonaltheorem},
+\begin{equation} 
+0=\int \bracket{\xi''a}{\xi' a}\, d\xi'
+\end{equation}
+which is also contradictory. Finally, if there is a term in the sum in \ref{extensionassumption} referring to an eigenvalue $\xi^t$ in the range, we get, multiplying \ref{extensionassumption} on the left by $\bra{\xi^tb}$,
+\begin{equation}
+0 = \int \bracket{\xi^tb}{\xi'a} \, d\xi' + \bracket{\xi^tb}{\xi^tb}
+\label{extensionfinite1}
+\end{equation}
+and multiplying \ref{extensionassumption} on the left by $\bra{\xi^ta}$
+\begin{equation}
+0 = \int \bracket{\xi^ta}{\xi'a} \, d\xi' + \bracket{\xi^ta}{\xi^tb}
+\label{extensionfinite2}
+\end{equation}
+Now the integral in \ref{extensionfinite2} is finite, so $\bracket{\xi^ta}{\xi^tb}$ and $\bracket{\xi^tb}{\xi^ta}$ is finite. The integral in \ref{extensionfinite1} must then be zero, so $\bracket{\xi^tb}{\xi^tb}$ is zero and we again have a contradiction. Thus every term in \ref{extensionassumption} must vanish and the expansion of a ket $\ket{P}$ in the form of the right-hand side must be unique.
+
+\end{proof}
+
+\begin{theorem}
+The conjugate complex of the linear operator $f(\xi)$ is the conjugate complex function $\bar{f}$ of $\xi$.
+\end{theorem}
+\begin{proof}
+\begin{equation}
+\bra{\xi'}\overline{f(\xi)} = \bar{f}(\xi')\bra{\xi'}
+\end{equation}
+\begin{align*}
+\bracketl{\xi''}{\overline{f(\xi)}}{P} &= \bar{f} (\xi'')\bracket{\xi''}{P} \\
+&= \int \bar{f}(\xi'') \bracket{\xi''}{\xi'c} \, d\xi' + \sum_r \bar{f} (\xi'') \bracket{\xi''}{\xi^r d}\\
+&= \int \bar{f}(\xi'') \bracket{\xi''}{\xi'c} \, d\xi' + \bar{f} (\xi'') \bracket{\xi''}{\xi'' d}
+\end{align*}
+\begin{equation}
+\bracketl{\xi''}{\bar{f}(\xi)}{P} = \iint \bar{f} (\xi'') \bracket{\xi''}{\xi'c} \, d\xi' + \bar{f} (\xi'') \bracket{\xi''}{\xi''d}
+\end{equation}
+
+Q.E.D
+\end{proof}
+
+\begin{theorem}
+If two observables $\xi$ and $\eta$ commute there exist so many simultaneous eigenstates that they form a complete set.
+\end{theorem}
+
+\begin{proof}
+Take an eigenket of $\eta$, $\ket{\eta'}$ say, belonging to the eigenvalue $\eta'$, and expand it in terms of eigenkets of $\xi$ in the form of the right-hand side,
+\begin{equation}
+\ket{\eta'} = \int \ket{\xi'\eta'c} \, d\xi'  + \sum_r \ket{\xi^r \eta' d}
+\end{equation}
+
+The eigenkets of $\xi$ and on the right-hand side here have $\eta'$ inserted in them as an extra label, in order to remind us that they come from the expansion of a special ket vector, mainly $\ket{\eta'}$, and not a general one. We can now show that each of these eigenkets of $\xi$ is also an eigenket of $\eta$ belonging to the eigenvalue $\eta'$. We have
+\begin{equation}
+0 = (\eta - \eta') \ket{\eta'} = \ket{\eta'} = \int(\eta - \eta')\ket{\xi'\eta'c} \, d\xi'  + \sum_r(\eta - \eta') \ket{\xi^r \eta' d}
+\end{equation}
+Now the ket $(\eta - \eta') \ket{\xi^r \eta' d}$ satisfies
+\begin{equation}
+\xi (\eta - \eta') \ket{\xi^r \eta' d} = (\eta - \eta') \xi \ket{\xi^r \eta' d}
+=(\eta - \eta') \xi^r \ket{\xi^r \eta' d} = \xi^r (\eta - \eta') \ket{\xi^r \eta' d}
+\end{equation}
+showing that it is an eigenket of $\xi$ belonging to the eigenvalue $\xi^r$, and similarly the ket $(\eta - \eta') \ket{\xi^r \eta' c}$ is an eigenket of $\xi$ belonging to the eigenvalue $\xi'$. Thus it gives an integral plus a sum of eigenkets of $\xi$ equal to zero, which, as we have seen, is impossible unless the integrand and every term in the sum vanishes. Hence
+\begin{equation}
+(\eta - \eta') \ket{\xi^r \eta' c} = (\eta - \eta') \ket{\xi^r \eta' d} = 0
+\end{equation}
+so that all the kets appearing on the right-hand side are eigen kets of $\eta$ as well as of $\xi$. Now the equation gives $\ket{\eta'}$ expanded in terms of simultaneous eigenkets of $\xi$ and $\eta$. Since any ket can be expanded in terms of eigenkets $\ket{\eta'}$ of $\eta$, it follows that any ket can be expanded in terms of simultaneous eigenkets of $\xi$ and $\eta$, and thus the simultaneous eigenstates form a complete set.
+\end{proof}
+
+\begin{theorem}
+If $\xi$ and $\eta$ are two observables such that their sumultaneous eigenstates form a complete set, then $\xi$ and $\eta$ commute.
+\end{theorem}
+
+\begin{proof}
+If $\ket{\xi'\eta'}$ is a simultaneous eigenket belonging to the eigenvalues $\xi'$ and $\eta'$,
+\begin{equation}
+(\xi\eta-\eta\xi) \ket{\xi'\eta'} = (\xi'\eta'-\eta'\xi') \ket{\xi'\eta'} =0
+\label{commutereverse}
+\end{equation}
+Since the simultaneous eigenstates form a complete set, an arbitrary ket $\ket{P}$ can be expanded in terms of simultaneous eigenkets $\ket{\xi'\eta'}$, for each of which \ref{commutereverse} holds, and hence 
+\begin{equation}
+(\xi\eta-\eta\xi)\ket{P} = 0
+\end{equation}
+\begin{equation}
+\xi \eta - \eta \xi =0
+\end{equation}
+\end{proof}
+%-----------------------------------------------------------------------------------
+\subsection{Digests}
+
+Let us examine mathematically the condition for a real dynamical variable $\xi$ to be an observable. Its eigenvalues may consist of a (finite or infinite) discrete set of numbers, or alternatively, they may consist of all numbers in a certain range, such as all numbers lying between $a$ and $b$. In the former case, the condition that
+any state is dependent on eigenstates of $\xi$ is that any ket can be expressed as a sum of eigenkets of  $\xi$. In the latter case the condition needs modification, since one may have an integral instead of a sum, i.e. a ket $\ket{P}$ may be expressible as an integral of eigenkets of $\xi$,
+\begin{equation}
+\ket{P} = \int \ket{\xi'}\, d\xi',
+\label{continuingeigenvalue}
+\end{equation}
+$\ket{\xi'}$ being an eigenket of $\xi$ belonging to the eigenvalue $\xi'$ and the range of integration being the range of eigenvalues, as such a ket is dependent on eigenkets of $\xi$. Not every ket dependent on eigenkets of $\xi$ can be expressed in the form of the right-hand side of \ref{continuingeigenvalue}, since one of the eigenkets itself cannot, and more generally any sum of eigenkets cannot. The condition for the eigenstates of $\xi$ to form a complete set must thus be formulated, that any ket $\ket{P}$ can be expressed as an integral plus a sum of eigenkets of $\xi$, i.e.
+\begin{equation}
+\ket{P} = \int \ket{\xi'c} d \xi' + \sum_r \ket{\xi ^r d},
+\label{extension}
+\end{equation}
+where the $\ket{\xi' c}$, $\ket{\xi^r d}$ are all eigenkets of $\xi$, the labels $с$ and $d$ being inserted to distinguish them when the eigenvalues $\xi$ and $\xi^r$ are equal, and where the integral is taken over the whole range of eigenvalues
+and the sum is taken over any selection of them. If this condition is satisfied in the case when the eigenvalues of $\xi$ consist of a range of numbers, then $\xi$ is an observable.
+
+The reciprocal of an observable exists if the observable does not have the eigenvalue zero. If the observable a does not have the eigenvalue zero, the reciprocal observable, which we call $\alpha ^{-1}$ or $1/\alpha$, will satisfy
+\begin{equation}
+\alpha ^{-1} \ket{\alpha'} = \alpha'^{-1}\ket{\alpha'},
+\end{equation}
+where $\ket{\alpha'}$ is an eigenket of $\alpha$ belonging to the eigenvalue $\alpha'$. Hence
+\begin{equation}
+\alpha \alpha^{-1} \ket{\alpha'} = \alpha \alpha'^{-1}\ket{\alpha'}=\ket{\alpha'}
+\end{equation}
+
+Since this holds for any eigenket $\ket{\alpha'}$, we must have
+\begin{equation}
+\alpha \alpha^{-1} =1.
+\label{reciprocal}
+\end{equation}
+
+Similarly,
+\begin{equation}
+\alpha^{-1}\alpha=1
+\end{equation}
+
+Either of these equations is sufficient to determine $\alpha^{-1}$ completely, provided $\alpha$ does not have the eigenvalue $0$. To prove this in the case of 
+\ref{reciprocal}, let $x$ be any linear operator satisfying the equation
+\begin{equation}
+\alpha x = 1
+\end{equation}
+and multiply both sides on the left by the $\alpha^{-1}$ defined, The result is
+\begin{equation}
+\alpha ^{-1} \alpha x = \alpha ^{-1}
+\end{equation}
+and hence $x=\alpha ^{-1}$.
+
+\begin{equation}
+(\alpha\beta\gamma...)^{-1}=...\gamma^{-1}\beta^{-1}\alpha^{-1}
+\end{equation}
+
+The square root of an observable $\alpha$ always exists, and is real if $\alpha$ has no negative eigenvalues. We write it $\sqrt{\alpha}$ or $\alpha ^{\frac{1}{2}}$. It satisfies
+\begin{equation}
+\sqrt{\alpha} \ket{\alpha'} = \pm \sqrt{\alpha'} \ket{\alpha'}
+\end{equation}
+\begin{equation}
+\sqrt{\alpha}\sqrt{\alpha}=\alpha
+\end{equation}
+
+%--------------------------------------------------------------
+\section{Representations}
+
+Representations are of great importance in the physical interpretation of quantum mechanics as they provide a convenient method for obtaining the probabilities of observables having given values.
+
+\subsection{Definitions}
+\define{representation}{The way in which the abstract quantities are to be replaced.}
+\define{representative}{The set of numbers that replace an abstract quantity.}
+\define{basic bras}{A complete set of bra vectors, i.e. a set such that any bra can be expressed linearly in terms of them (as a sum or an integral or possibly an integral plus a sum).}
+\define{orthogonal representation}{The basics bras are all independent, and also satisfy the more stringent condition that any two of them are orthogonal.}
+\define{complete set of commuting observables}{A set of observables which all commute with one another and for which there is only one simultaneous eigenstate belonging to any set of eigenvalues.}
+\define{the representative of a bra}{the conjugate complex of the representative of the conjugate imaginary ket.}
+\define{weight function of the representation}{the $\rho'$ in
+\begin{equation}
+\sum_{\xi'_1..\xi'_v} \int..\int \ket{\xi'_1...\xi'_u} \rho' \,d\xi'_{v+1}..d\xi'_u \, \bra{\xi'_1...\xi'_u} =1
+\end{equation}
+}\footnote{此处的1不应简单地理解为数值上的1，而更应看待为 unit operator.}
+\define{probability amplitude}{The numbers which form the representative of a normalized ket (or bra) for
+\begin{equation*}
+P_{\xi'_1...\xi'_u} \, d\xi'_{v+1}..d\xi'_u = |\bracket{\xi_1'...\xi'_u}{x}|^2 d\xi'_{v+1}..d\xi'_u
+\end{equation*}
+\label{probabilityamplitude}
+}\footnote{THe square of the modulus of a probability amplitude is an ordinary probability, or a probability per unit range for those variables that have continuous ranges of values.}
+\define{relative probability amplitudes}{numbers $\bracket{\xi'_1...\xi'_u}{x}$ when ket $x$ cannot be normalized.}
+\define{being diagonal in the representation}{The requirement of the representation used in \ref{probabilityamplitude} that each of the $\xi$'s shall be represented by a diagonal matrix.}
+\define{Transformation functions}{$\bracket{\eta'_1...\eta'_w}{\xi'_1...\xi'_u}$ or $\bracket{\xi'_1...\xi'_u}{\eta'_1...\eta'_w}$ being the coefficients in 
+\begin{equation}
+\bracket{\eta'_1...\eta'_w}{P} = \sum_{\xi'_1...\xi'_v}\int..\int \bracket{\eta'_1...\eta'_w}{\xi'_1...\xi'_u} \, d\xi'_{v+1}..d\xi'_u \, \bracket{\xi'_1...\xi'_u}{P}
+\end{equation}
+
+or
+\begin{equation}
+\bracket{\xi_1'...\xi'_u}{P} = \sum_{\eta'_1...\eta'_w}\int..\int \bracket{\xi_1'...\xi'_u}{\eta'_1...\eta'_w} \, d\eta'_{x+1}..d\eta'_w \, \bracket{\eta'_1...\eta'_w}{P}
+\end{equation}
+}
+
+\subsection{Notes}
+\begin{enumerate}
+	\item We can similarly introduce linear operators $L_1,L_2,L_3,...,L_u$ by multiplying $\bracket{\lambda_1\lambda_2...\lambda_u}{a}$ by the factors $\lambda_1, \lambda_2,...,\lambda_u$ in turn and considering the resulting sets of numbers as representatives of kets. Each of these $L$'s can be shown in the same way to have the basic bras as eigenbras and to be real and an observable. The basic bras are simultaneous eigenbras of all the $L$'s. Since these simultaneous eigenbras form a complete set, any two of the $L$'s commute.
+
+	\item For labelling the basic bras in this general case, we may use the eigenvalues $\xi'_1,\xi'_2,...,\xi'_u$ to which they belong, together with certain additional real variables $\lambda_1,\lambda_2,...,\lambda_v$ say, which must be introduced to distinguish basic vectors belonging to the same set of eigenvalues from one another. A basic bra is then written $\bra{\xi'_1\xi'_2...\xi'_u\lambda_1\lambda_2...\lambda_v}$. ... The basic bras are now simultaneous eigenbras of all the commuting observables $\xi'_1,\xi'_2,...,\xi'_u,L_1,L_2,...,L_v$.
+
+	\item
+	\begin{itemize}
+		\item The basic bras of an orthogonal representation are simultaneous eigenbras of a complete set of commuting observables.
+
+		\item Given a complete commuting observables, we can set up an orthogonal representation in which the basic bras are simultaneous eigenbras of this complete set.
+
+		\item Any set of commuting observables can be made into a complete commuting set by adding certain observables to it.
+
+		\item A convenient way of labelling the basic bras of an orthogonal representation is by means of the eigenvalues of the complete set of commuting observables of which the basic bras are simultaneous eigenbras.
+	\end{itemize}
+
+	\item The representative of a bra is the conjugate complex of the representative of the conjugate imaginary ket.
+
+	\item The process of multiplying a function of $x$ by $\delta(x-a)$ and integrating over all $x$ is equivalent to the process of substituting $a$ for $x$.
+
+	\item the form of $\bracketl{\xi'_1...\xi'_u}{\alpha}{\xi''_1...\xi''_u}$ can be expressed like:
+	\begin{equation}
+	\begin{pmatrix}
+	\bracketl{\xi^1}{\alpha}{\xi^1} & \bracketl{\xi^1}{\alpha}{\xi^2} & . & . \\
+	\bracketl{\xi^2}{\alpha}{\xi^1} & \bracketl{\xi^2}{\alpha}{\xi^2} & . & . \\
+	\bracketl{\xi^3}{\alpha}{\xi^1} & \bracketl{\xi^3}{\alpha}{\xi^2} & . & .
+	\\
+	. . . & . . . &  . & . \\
+	. . . & . . . &  . & . 
+	\end{pmatrix}
+	\end{equation}
+	\item Each $\xi_m ( m= 1,2,...,u)$ and any function of them is represented by a diagonal matrix.
+
+	\item The matrices are subject to the same algebraic relations as the linear operators.
+
+	\item The probability of the $\xi$'s having the values $\xi$' is just the square of the modulus of the appropriate corrdinate of the normalized ket vector corresponding to the state concerned
+
+	\item The probability distribution of values for the $\xi$'s is given by the square of the modulus of the representative of the normalized ket vector corresponding to the state concerned.
+	\begin{equation}
+	P_{\xi'_1...\xi'_u} \, d\xi'_{v+1}..d\xi'_u = |\bracket{\xi_1'...\xi'_u}{x}|^2 d\xi'_{v+1}..d\xi'_u
+	\label{probabilitydistribution}
+	\end{equation}
+
+	\item To introduce a representation in practice
+		\begin{itemize}
+		\item We look for observables which we would like to have diagonal, either because we are interested in their probabilities or for reasons of mathematical simplicity;
+		\item We see that they all commute - anecessary condition since diagonal matrices always commute;
+		\item We then see that they form a complete commuting set, and if not we add some more commuting observables to them to make them into a complete commuting set;
+		\item We set up an orthogonal representation with this complete commuting set diagonal.
+	\end{itemize}
+
+	\item The probability of the $\xi$'s having the values $\xi'$ for the state for which the $\xi$'s certainly have the values $\eta'$ is equal to the probability of the $\eta$'s having the values $\eta'$ for the state for which the $\xi$'s certainly have the values $\xi'$.
+
+	\item If the labels of a ket involve complex numbers or complex functions, the labels of the conjugate imaginary bra involve the conjugate complex numbers or functions.
+
+	\item We can construct triple products of the form $\mean{f(\xi}$. Such a triple product is a number, equal to $f(\xi)$ summed or integrated over the whole domain of eigenvalues for the $\xi$'s,
+	\begin{equation}
+	\mean{f(\xi)}= \sum_{\xi'_1...\xi'_v}\int...\int f(\xi')\,d\xi'_{v+1}...d\xi'_{u}
+	\end{equation}
+
+
+\end{enumerate}
+
+%-------------------------------------------------------------
+\subsection{Theorems and Proofs}
+\begin{theorem}
+The basic bras of the representation are sufficient to fix the representation completely.
+\end{theorem}
+
+\begin{proof}
+Take any ket $\ket{a}$ and form its scalar product with each of the basic bras. The numbers so obtained constitute the representative of $\ket{a}$. They are sufficient to determine the ket $\ket{a}$ completely, since if there is a second ket, $\ket{a_1}$ say, for which these product with any basic bra vanishing, and hence its scalor product with any bra whatever will vanish and $\ket{a}-\ket{a_1}$ itself will vanish.
+\end{proof}
+
+\begin{theorem}
+If $\xi_1,\xi_2,...,\xi_u$ are any set of commuting observables, we can set up an orthogonal representation in which the basic bras are simultaneous eigenbras of $\xi_1,\xi_2,...,\xi_u$.
+\end{theorem}
+
+\begin{proof}
+Let us suppose first that there is only one independent simultaneous eigenbra of $\xi_1,\xi_2,...,\xi_u$ belonging to any set of eigenvalues $\xi'_1,\xi'_2,...,\xi'_u$. Then we may take these simultaneous eigenbras, with arbitrary numerial coefficients, as our basic bras. They are all orthogonal on account of the orthogonality theorem (any two of them will have at least one eigenvalue different, which is sufficient to make them orthogonal) and there are sufficient of them to form a complete set.
+\end{proof}
+
+\begin{theorem}
+
+\begin{align}
+Discrete: & \sum_{\xi'} \ket{\xi'}\bra{\xi'} =1 \\
+Continuous: & \int \ket{\xi'} \, d{\xi'} \bra{\xi'} =1
+\end{align}
+where the eigenvectors of $\xi$ form basic vectors.
+\end{theorem}
+\begin{proof}
+We can develop the theory on closely parallel lines for the discrete and continuous cases. For the discrete case we have,
+\begin{equation}
+\sum_{\xi'}\ket{\xi'}\bracket{\xi'}{\xi''}= \sum_{\xi'}\ket{\xi'}\delta_{\xi'\xi''}=\ket{\xi''}
+\end{equation}
+the sum being taken over all eigenvalues. This equation holds for any basic ket $\ket{\xi''}$ and hence, since the basic kets form a complete set,
+\begin{equation}
+\sum_{\xi'}\ket{\xi'}\bra{\xi'}=1
+\end{equation}
+
+Thus
+\begin{equation}
+\sum_{\xi'} \ket{\xi'}\bra{\xi'} =1
+\end{equation}
+
+Similarly, for the continuous case we have,
+\begin{equation}
+\int \ket{\xi'} \, d\xi' \, \bracket{\xi'}{\xi''} =\int \ket{\xi'} \, d \xi' \, \delta(\xi'-\xi'') = \ket{\xi''}
+\end{equation}\footnote{enabing one to expand any bra or ket in terms of the basic vectors.}
+\end{proof}
+
+\begin{theorem}
+A linear operator that commutes with an observable $\xi$ commutes also with any function of $\xi$.
+\end{theorem}
+
+\begin{proof}
+Let $\omega$ be the linear operator. so that we have the equation 
+\begin{equation}
+\xi\omega - \omega \xi = 0
+\end{equation}
+
+Let us introduce a representation in which $\xi$ is diagonal. If $\xi$ by itself does not form complete commuting set of observables, we must make it into a complete commuting set of observables, we must make it into a complete commuting set by adding certain observables, $\beta$ say, to it, and then take the representation in which $\xi$ and the $\beta$'s are diagonal. (The case when $\xi$ does form a complete commuting set by itself can be looked upon as a special case of the preceding one with the number of $\beta$ cariables zero.) In this representation equation the former equation becomes
+\begin{equation}
+\bra{\xi'\beta'}\xi\omega-\omega \xi \ket{\xi''\beta''} = 0
+\end{equation}
+which reduces to 
+\begin{equation}
+\xi\bracketl{\xi'\beta'}{\omega}{\xi''\beta''}-\bracketl{\xi'\beta'}{\omega}{\xi''\beta''}\xi''=0
+\end{equation}
+
+In the case when the eigenvalues of $\xi$ are discrete, this equation shows that all the matrix elements $\bracketl{\xi'\beta'}{\omega}{\xi''\beta''}$ of $\omega$ vanish except those for which $\xi'=\xi''$. In the case when the eigenvalues of $\xi$ 
+
+\end{proof}
+
+\begin{theorem}
+A linear operator that commutes with each of a complete set of comuuting observables is a function of those observables.
+\end{theorem}
+
+
+\begin{proof}
+Let $\omega$ be the linear operator and $\xi_1,\xi_2,...,\xi_u$ the complete set of commuting observables, and set up a representation with these observables diagonal. Since $\omega$ commutes with each of the $\xi$'s, the matrix representing it is diagonal with respect to each of the $\xi$'s, by the argument we had above. This matrix is therefore a diagonal matrix and is of the form
+\begin{equation}
+\bracketl{\xi_1'...\xi'_u}{\omega}{\xi_1''....\xi'_u}=c'\delta_{\xi_1\xi_1''}...\delta_{\xi'_v\xi''_v}\delta(\xi'_{v+1}-\xi_{v+1}'')..\delta{\xi'_u-\xi''_u}
+\end{equation}
+involving a number $c'$ which is a function of the $\xi'$'s. It thus represents the function of the $\xi$'s that $c'$ is of the $\xi'$'s, and hence $\omega$ equals this function of the $\xi$'s.
+\end{proof}
+
+
+\begin{theorem}
+If an observable $\xi$ and a linear operator $g$ are such that any linear operator that commutes with $\xi$ also commutes with $g$, then $g$ is a function of $\xi$.
+\end{theorem}
+
+\begin{proof}
+In the first place, we see that $g$ must commute with $\xi$ itself, and hence the representative of $g$ must be diagonal with respect to $\xi$. i.e. it must be of the form
+\begin{equation}
+\bracketl{\xi'\beta'}{g}{\xi''\beta''}=a(\xi'\beta'\beta'')\delta_{\xi'\xi''}\quad or \quad a(\xi'\beta'\beta'')\delta(\xi'-\xi'')
+\end{equation}
+Now let $\omega$ be any linear operator that commutes with $\xi$, so that its representative is of the form
+
+
+\begin{equation}
+\bracketl{\xi'\beta'}{\omega}{\xi''\beta''}=b(\xi'\beta'\beta'')\delta_{\xi'\xi''}\quad or \quad b(\xi'\beta'\beta'')\delta(\xi'-\xi'')
+\end{equation}
+
+By hypothesis $\omega$ must also commute with $g$, so that 
+\begin{equation}
+\bracketl{\xi'\beta'}{g\omega-\omega g}{\xi''\beta''}=0
+\end{equation}
+
+If we suppose for definiteness that the $\beta$'s have discrete eigenvalues, with the help of the law of matrix multiplication, the former equation leads, with the help of the law of matrix multiplication, to
+\begin{equation}
+\sum_{\beta'''} \{a (\xi' \beta' \beta''' )b(\xi'\beta'''\beta'')-b(\xi' \beta' \beta''' )a(\xi'\beta'''\beta'')\}=0
+\end{equation}
+the left-hand sides of the two equations above different from whether multiplied by $\delta_{\xi'\xi''}$ or $\delta(\xi' \xi'') $.They should hold for all functions $b(\xi'\beta'\beta'')$. We can deduce that
+\begin{equation}
+\begin{cases}
+a(\xi'\beta' \beta'') =0 \quad \text{for} \quad \beta' \ueq \beta'',\\
+a(\xi'\beta'\beta')=a(\xi'\beta''\beta'')
+\end{cases}
+\end{equation}
+The first of these results shows that the matrix representing $g$ is diagonal and the second shows that $a(\xi'\beta' \beta')$ is a function of $\xi'$ only. We can now infer that $g$ is that function of $\xi$ which $a(\xi'\beta' \beta'$ is of $\xi'$, which proves the theorem.
+\end{proof}
+
+%------------------------------------------------------------
+\subsection{Digests}
+We may suppose the basic bras to be labelled by one or more parameters, $\lambda_1,\lambda_2,...,\lambda_u,$ each of which may take on cetain numerical values. The basic bras will then be written $\bra{\lambda_1\lambda_2...\lambda_u}$ and the representative of $\ket{a}$ will be written $\bracket{\lambda_1\lambda_2...\lambda_u}{a}$. This representative will now consist of a set of numbers, one for each set of values that $\lambda_1,\lambda_2,...,\lambda_u$ may have in their respective domains. Such a set of numbers just forms a function of the variables $\lambda_1,\lambda_2,...,\lambda_u$. Thus the representative of a ket may be looked upon either as a set of numbers or as a function of the variables used to label the basic bras.
+
+If the number of independent states of our dynamical system is finite, equal to $n$ say, it is sufficient to take $n$ basic bras, which may be labelled by a single parameter $\lambda$ taking on the values $1,2,3,...,n$. The representative of any ket $\ket{a}$ now consists of the set of $n$ numbers $\bracket{1}{a}$,$\bracket{2}{a}$,$\bracket{3}{a}$,...,$\bracket{n}{a}$, which are precisely the coordinates of the vector $\ket{a}$ referred to a system of coordinates in the usual way.
+
+The most important property of $\delta(x)$ is exemplified by the following equation,
+\begin{equation}
+\int_{-\infty}^{\infty} f(x) \delta(x) \, dx = f(0)
+\end{equation}
+where $f(x)$ is any continuous function of $x$. By making a change of origin, we can deduce the formula
+\begin{equation}
+\int_{-\infty}^{\infty} f(x) \delta(x-a) \, dx = f(a)
+\end{equation}
+where $a$ is any real number. The range of integration in both equations need not be from $-\infty$ to $\infty$, but may be over any domain surrounding the critical point at which the $\delta$ function does not vanish.
+
+
+An alternative way of defining the $\delta$ function is as the differential coefficient $\epsilon'(x)$ of the function $\epsilon(x)$ given by
+\begin{align*}
+\epsilon(x) & = 0 \,(x < 0)\\
+& = 1 \, (x>0)
+\end{align*}
+
+We may verify that this is equivalent to the previous definition by sustituting $\epsilon'(x)$ for $\delta(x)$ in the left-hand side and integrating by parts, We find, for $g_1$ and $g_2$ two positive numbers,
+\begin{align*}
+\int_{-g_2}^{g_1} f(x) \epsilon'(x) \, dx & = [f(x)\epsilon(x)]^{g_1}_{-g_2}-\int^{g1}_{-g_2} f'(x) \epsilon(x) \, dx \\
+& = f(g_1) - \int^{g_1}_0 f'(x) \, dx \\
+& = 0
+\end{align*}
+
+\begin{align}
+\delta(-x) & = \delta(x) \\
+x\delta(x) & = 0 \\
+\delta(a x) & = a^{-1} \delta(x)\\
+\delta(x^2-a^2) & = \frac{1}{2} a^{-1} {\delta(x-a)+\delta(x+a)} \quad (a>0)\\
+\int \delta(a-x) \, dx \, \delta(x-b) & = \delta(a-b) \\
+f(x) \delta(x-a) &=  f(a)\delta(x-a)\\
+\int f(x)x\delta(x) \, dx & = 0
+\end{align}
+
+\begin{equation}
+\frac{d}{dx} \func{log} x = \frac{1}{x}
+\label{differentiationoflog}
+\end{equation}
+In order to make the reciprocal function $1/x$ well defined in the neighborhood of $x=0$ we must impose on it an extra condition, such as that its integral from $- \epsilon$ to $\epsilon$ vanishes. With this extra condition, the integral of the right-hand side of \ref{differentiationoflog} from $-\epsilon$ to $\epsilon$ vanishes. while that of the left-hand side of \ref{differentiationoflog} equals $\func{log}(-1)$, so that \ref{differentiationoflog} is not a correct equation. To correct it, we must remember that, taking principal values, log $x$ has a pure imaginary term $i\pi$ for negative values of $x$. As $x$ passes through the value zero this pure imaginary term vanishes discontinuously. The differentiation of this pure imaginary term gives us the result $-i\pi\delta(x)$, so that \ref{differentiationoflog} should read 
+\begin{equation}
+\frac{d}{dx}\func{log} x =\frac{1}{x} - i \pi \delta (x)
+\end{equation}
+
+In the case when the eigenvalues of $\xi$ are continuous we cannot normalize the basic vectors. If we now consider the quantity $\bracket{\xi'}{\xi''}$ with $\xi'$ fixed and $\xi''$ varying,.... this quantity $\xi'' \neq \xi'$ and that its integral over a range of $\xi''$ extending through the value $\xi'$ is finite, equal to $c$ say. Thus
+\begin{equation}
+\bracket{\xi'}{\xi''}=c\delta(\xi' - \xi'')
+\end{equation}
+$c$ has been proved to be a positive number. It may vary with $\xi'$ so we should write it $c(\xi')$ or $c'$ for brevity, and thus
+\begin{equation}
+\bracket{\xi}{\xi''} = c'\delta(\xi'-\xi'')
+\end{equation}
+Alternatively,
+\begin{equation}
+\bracket{\xi}{\xi''} = c''\delta(\xi'-\xi'')
+\end{equation}
+	where $c''$ is short for $c(\xi'')$.
+
+\begin{align}
+\ket{P} &= \sum_{\xi'} \ket{\xi'} \bracket{\xi'}{P} \quad (discrete) \\
+&=\int \ket{\xi'} \, d\xi' \, \bracket{\xi'}{P} \quad (continuous)
+\end{align}
+
+\begin{align}
+\bracket{Q}{P} &= \sum_{\xi'} \bracket{Q}{\xi'} \bracket{\xi'}{P} \quad (discrete) \\
+&= \int \bracket{Q}{\xi'} \, d\xi' \, \bracket{\xi'}{P} \quad (continuous)
+\end{align}
+
+Let us now pass to the general case when we have several commuting observables $\xi_1,\xi_2,...,\xi_u$ forming a complete commuting set and set up an orthogonal representation in which the basic vectors are simultaneous eigenvectors of all of them, and are written $\bra{\xi'_1, ...,\xi'_u}, \ket{\xi'_1, ...,\xi'_u}$. Let us suppose $\xi_1, \xi_2, .... , \xi_v (v \leqslant u)$ have discrete eigenvalues and $\xi_{v+1},...,\xi_u$ have continuous eigenvalues.
+
+Consider the quantity $\bracket{\xi'_1..\xi'_v\xi'_{v+1}..\xi'_u}{\xi'_1..\xi'_v\xi'_{v+1}..\xi'_u}$. From the orthogonality theorem, it must vanish unless each $\xi''_s = \xi'_s$ for $s = v+1, ...., u$. The $(u-v)$-fold integral of this quantity with respect to each $\xi'')s$ over a range extending through the value $\xi'_s$ is a finite positive number, Calling this number $c'$, the $'$ denoting that it is a function of $\xi'_1..\xi'_v\xi'_{v+1}..\xi'_u$, we can express our results by the equation
+\begin{equation}
+\bracket{\xi'_1..\xi'_v\xi'_{v+1}..\xi'_u}{\xi''_1..\xi''_v\xi''_{v+1}..\xi''_u} = c' \delta(\xi'_{v+1}-\xi''_{v+1})..\delta(\xi'_u-\xi''_u)
+\end{equation}
+with one $\delta$ factor on the right-hand side for each value of $s$ from $v+1$ to $u$. We know change the lengths of our basic vectors so as to make $c'$ unity. By a further use of the orthogonality theorem, we get finally
+\begin{equation}
+\bracket{\xi'_1..\xi'_v\xi'_{v+1}..\xi'_u}{\xi''_1..\xi''_v\xi''_{v+1}..\xi''_u}
+=\delta_{\xi'_1\xi''_1}..\delta_{\xi'_v\xi''_v}\delta(\xi'_{v+1}-\xi''_{v+1})..\delta(\xi'_u-\xi''_u)
+\end{equation}
+with a two-suffix $\delta$ symbol on the right-hand side for each $\xi$ with discrete eigenvalues and a $\delta$ function for each $\xi$ with continuous eigenvalues. 
+
+\begin{equation}
+\sum_{\xi'_1..\xi'_v} \int..\int \ket{\xi'_1...\xi'_u} \,d\xi'_{v+1}..d\xi'_u \, \bra{\xi'_1...\xi'_u} =1
+\label{unitgeneralization}
+\end{equation}
+
+There are some problems in which it is convenient not to make the $c'$ equal unity, but to make it equal to some definite function of the $\xi''$s instead. Calling this function of the $\xi''$s $\rho'^{-1}$ we then have,
+\begin{equation}
+\bracket{\xi'_1...\xi''_u}{\xi''_1...\xi''_u}=\rho'^{-1}\delta_{\xi'_1\xi''_1}..\delta_{\xi'_v}{\xi''_v}\delta(\xi'_{v+1}-\xi''_{v+1})..\delta(\xi'_u-\xi''_u)
+\end{equation}
+and we get
+\begin{equation}
+\sum_{\xi'_1..\xi'_v} \int..\int \ket{\xi'_1...\xi'_u} \rho' \,d\xi'_{v+1}..d\xi'_u \, \bra{\xi'_1...\xi'_u} =1
+\end{equation}
+$\rho'$ is called the weight function of the representation, $\rho' \, d\xi'_{v+1}..d\xi'_u$ begin the 'weight' attached to a small volume element of the space of the variables $\xi'_{v+1},..,\xi'_u$.
+
+An example of a useful representation with non-unit weight function occurs when one has two $\xi'$s which are the polar and azimuthal angles $\theta$ and $\phi$ giving a direction in three-dimensional space and one takes $\rho'=\mathrm{\sin} \, \theta'$. One then has the element of solid angle $\mathrm{sin} \, \theta' \, d\theta'd\phi'$.
+
+The probability of each $\xi_r$ having the value $\xi'_r$ for the sate corresponding to the normalized ket vector $\ket{x}$ is
+\begin{equation}
+P_{\xi'_1...\xi'_u} = \bracketl{x}{\delta_{\xi_1\xi'_1}\delta_{\xi_2\xi'_2}...\delta_{\xi_u\xi'_u}}{x}
+\end{equation}
+
+If the $\xi$'s all have discrete eigenvalues, we can use \ref{unitgeneralization} with $v=u$ and no integrals, and get
+\begin{align*}
+P_{\xi'_1...\xi'_u} & = \sum_{\xi''_1...\xi''_u} \bracketl{x}{\delta_{\xi_1\xi'_1}\delta_{\xi_2\xi'_2}...\delta_{\xi_u\xi'_u}}{\xi''_1...\xi''u}\bracket{\xi''_1...\xi''_u}{x}\\
+& = \sum_{\xi''_1...\xi''_u} \bracketl{x}{\delta_{\xi''_1\xi'_1}\delta_{\xi''_2\xi'_2}...\delta_{\xi''_u\xi'_u}}{\xi''_1...\xi''u}\bracket{\xi''_1...\xi''_u}{x}\\
+& = \bracket{x}{\xi'_1...\xi'_u}\bracket{\xi'_1...\xi'_u}{x}
+=|\bracket{\xi'_1..\xi'_u}{x}|^2
+\end{align*}
+
+If the $\xi$'s do not all have discrete eigenvalues, but if, say, $\xi_1,...,\xi_v$ have dicrete eigenvalues and $\xi_{v+1},..,\xi_u$ have continuous eigenvalues, then to get something physically significant we must obtain the probability of each $\xi_r (r=1,...,v)$ having a specified value $\xi'_r$ and each $\xi_s ( s = v+1, ..., u$ lying in a specified small range $\xi'_s$ to $\xi'_s+d\xi'_s$. For this purpose we must replace each factor $\delta_{\xi_s\xi'_s}$ in
+\begin{equation*}
+P_{\xi'_1...\xi'_u} = \bracketl{x}{\delta_{\xi_1\xi'_1}\delta_{\xi_2\xi'_2}...\delta_{\xi_u\xi'_u}}{x}
+\end{equation*}
+by a factor $\chi_s$, which is that function of the observable $\xi_s$ which is equal to unity for $\xi_s$ within the range $\xi'_s$ to $\xi's+d\xi'_s$ and zero otherwise. Proceeding as before, we obtin for this probability
+\begin{equation}
+P_{\xi'_1...\xi'_u} \, d\xi'_{v+1}..d\xi'_u = |\bracket{\xi_1'...\xi'_u}{x}|^2 d\xi'_{v+1}..d\xi'_u
+\end{equation}
+
+
+In a representation in which the complete set of commuting observables $\xi_1,.....,\xi_u$ are dagonal any ket $\ket{P}$ will have a representative $\bracket{\xi'_1...\xi'_u}{P}$,or$\bracket{\xi'}{P}$ for brevity. This representativce is a definite function of the variables $\xi'$, say $\psi(\xi')$. The fucnction $\psi$ then determines the ket $\ket{P}$ completely, so it may be used to label this ket, to replace the arbitrary label $P$. In synbols,
+	\begin{equation}
+	\begin{cases}
+	\text{if} \quad \bracket{\xi'}{P} = \psi(\xi')\\
+	\text{then} \quad \ket{P}=\ket{\psi(\xi)}
+	\end{cases}
+	\end{equation}
+	We mut put $\ket{P}$ to $\ket{\psi(\xi)}$ and not $\ket{\psi(\xi')}$, since it does not depend on a particular set of eigenvalues for the $\xi$'s, but only on the form of the function $\psi$.
+
+	With $f(\xi)$ any function of the observables $\xi_1,....,\xi_u$, $f(\xi)\ket{P}$ will have as its representative
+	\begin{equation}
+	\bracketl{\xi'}{f(\xi)}{P}=f(\xi')\psi(\xi')
+	\end{equation}
+	Thus it is defined 
+	\begin{equation}
+	f(\xi)\ket{P} = \ket{f(\xi)\psi(\xi)}
+	\end{equation}
+	It is also defined
+	\begin{equation}
+	\begin{cases}
+	\bracket{\xi'}{P}=\psi(\xi')\\
+	\ket{P}=\psi(\xi)\rangle
+	\end{cases}
+	\end{equation}
+	We may further shorten $\psi(\xi') \rangle$ to $\psi \rangle$.
+
+	The ket $\psi(\xi)\rangle$ may be considered as the product of the linear operator $\psi(\xi)$ with a ket which is denoted simply by $\rangle$ without a label. We call the ket $\rangle$ the \emph{standard ket}. Any ket whatever can be expressed as a function of the $\xi$'s multiplied into the standard ket. 
+
+
+	Suppose we have a dynamical system describable in terms of dynamical variables wich can all be divided into two sets，set $A$ and set $B$ say, such that any number of set $A$ commutes with any member of set $B$. A general dynamical variable must be expressible as a function of the $A$-varables and B-variables together.\footnote{这里面确实A系统和B系统算符之间相互对易，能够存在共同的完备基组，但这是在一个总的Hilbert空间下成立，如果所要求的自由度不一样则是在两个Hilbert子空间，而这两个子空间的直积才是总的Hilbert空间}
+
+	Let us take any ket $\ket{a}$ for the $A$-system and any ket $\ket{b}$ for the $B$-system. We assume that they have a product $\ket{a}\ket{b}$ for which the commutative and distributive axioms of multiplication hold, i.e.
+	\begin{equation}
+	\begin{cases}
+	\ket{a}\ket{b} = \ket{b}\ket{a}\\
+	\{c_1 \ket{a_1} + c_2 \ket{a_2}\} \ket{b} = c_1 \ket{a_1}\ket{b} + c_2 \ket{a_2} \ket{b}\\
+	\ket{a}\{c_1 \ket{b_1} + c_2 \ket{b_2}\} = c_1 \ket{a}\ket{b_1} + c_2 \ket{a}\ket{b_2}
+	\end{cases}
+	\end{equation}
+	the $c$'s being numbers. We can give a meaning to any $A$-variable operating on the product $\ket{a}\ket{b}$ by assuming that it operates only on the $\ket{a}$ factor and commutes with the $\ket{b}$ factor, similarly for the $B$-variable system.  
+
+	Then
+	\begin{equation}
+	\ket{a}\ket{b}=\ket{b}\ket{a}=\ket{ab}
+	\end{equation}
+
+	The standard ket and bra are defined with respect to a representation.If we carried through the above work with a different representation in which the complete set of commuting observables $\eta$ are diagonal, or if we merely changed the phase factors in the representation with the $\xi$'s diagonal, we should get a different standard ket and bra.
+
+	The representative of $\ket{ab}$ equals the product of the representatives of $\ket{a}$ and of $\ket{b}$ in their respective representations, namely
+	\begin{equation}
+	\bracket{\xi'_A}{a}\bracket{\xi'_B}{b}=\bracket{\xi'_A\xi'_B}{ab}
+	\end{equation}
+
+	We can introduce the representation with the $\xi_A$'s diagonal, and also with respect to the standard ket, $\rangle_A$ say,for the $A$-system and $\rangle_B$ for the $B$-system, both with respect to the representation with the two variable-systems diagonal. Their product $\rangle_A\rangle_B$ is the nthe standard ket for the original system. Any ket for the oprignal system may be expressed as
+	\begin{equation}
+	\psi(\xi_A \xi_B) \rangle_A \rangle_B
+	\end{equation}
+
+	It may be that in a certain calculation we wish to use a particular representation for the $B$-system, say the above representation with the $\xi_B$'s　diagonal, but do not wish to introduce any particular representation for the $A$-system. Under these circumstances we could write any ket for the original system as 
+	\begin{equation}
+	\ket{\xi_B} \rangle_B
+	\end{equation}
+	in which $\ket{\xi_B}$ is a ket for the $A$-system and is also a function of the $\xi_B$'s. We can also have
+	\begin{equation}
+	\ket{\xi_B}=\psi(\xi_A\xi_B)\rangle_A
+	\end{equation}
+	Thus it is clear that
+	\begin{equation}
+	\ket{a}\ket{b}\ket{c}...=\ket{abc...}
+	\end{equation}
+
+
+\section{The Quantum Conditions}
+
+\subsection{Notes}
+\begin{enumerate}
+
+	\item The main properties of Poisson Brackets, which follow at once from the definition:
+	\begin{equation}
+	[u,v]=\sum_r \left\{\frac{\partial u}{\partial q_r}\frac{\partial v}{\partial p_r} - \frac{\partial u}{\partial p_r} \frac{\partial v}{\partial q_r} \right\}
+	\end{equation}
+	are:
+	\begin{align}
+	&[u,v]=-[v,u]\\
+	&[u,constant]=0 \\
+	&\begin{cases}
+	[u_1+u_2,v]=[u_1,v]+[u_2,v]\\
+	[u,v_1+v_2]=[u,v_1]+[u,v_2]
+	\end{cases}\\
+	&[u_1u_2,v]=[u_1,v]v_2 + u_1[u_2,v]\\
+	&[u,v_1v_2]=[u,v_1]v_2+v_1[u,v_2]\\
+	&[u,[v,w]]+[v,[w,u]]+[w,[u,v]]
+	\end{align}
+
+	\item We want to introduce a quantum P.B, which shall be the analogue of the classical one. We assume the quantum P.B. to satisfy all the conditions listed above. We can deduce that
+	\begin{align*}
+	[u_1u_2,v_1v_2]&=[u_1,v_1v_2]u_2+u_1[u_2,v_1v_2]\\
+		&=[u_1u_2,v_1]v_2+v_1[u_1u_2,v_2]
+	\end{align*}
+	after expansion, we obtain
+	\begin{equation}
+	[u_1,v_1](u_2v_2-v_2u_2)=(u_1v_1-v_1u_1)[u_2,v_2]
+	\end{equation}
+	Since this condition holds with $u_1$ and $v_1$ quite independent of $u_2$ and $v_2$, we get
+	\begin{equation}
+	uv-vu=i\hbar[u,v]
+	\end{equation}
+	the coefficient $i\hbar$ being added to agree with the experimentary results.
+
+	And we assume the fundamental quantum conditions
+	\begin{equation}
+	\begin{cases}
+	[q_r,q_s]=0\\
+	[p_r,p_s]=0\\
+	[q_r,p_s]=i\hbar\delta_{rs}
+	\end{cases}
+	\end{equation}
+	which indicates that dynamical variables referring to different degrees of freedom commute.
+
+	\item We construct the quantum conditions to make it analogous to the classical mechanics, which guarantees that classic mechanics may be regarded as the limiting case of quantum mechanics when $\hbar$ tends to zero.
+
+	\item It can be deduced that
+	\begin{equation}
+	\langle \phi \frac{d}{dq}=-\langle \frac{d \phi}{dq}
+	\end{equation}
+	To get the representative of $d/dq$ we note that
+	\begin{equation}
+	\ket{q''} = \delta(q-q'') \rangle
+	\end{equation}
+	so that
+	\begin{equation}
+	\bracketl{q'}{\frac{d}{dq}}{q''} = \frac{d}{dq'}\delta(q'-q'')
+	\end{equation}
+	and we deduce that 
+	\begin{equation}
+	\frac{d}{dq} q \psi\rangle = \frac{dq\psi}{dq}\rangle = q\frac{d}{dq} \psi \rangle + \psi \rangle
+	\end{equation}
+	Thus
+	\begin{equation}
+	\frac{d}{dq} q - q\frac{q}{dq} =1
+	\end{equation}
+	Thus \emph{$-i\hbar d/dq$ satisfies the same commutation relation with $q$ and $p$ does.}
+
+	\item It can also be achieved that
+	\begin{equation}
+	\begin{cases}
+	\frac{\partial}{\partial q_r} q_s - q_s \frac{\partial }{\partial q_r} =\delta_{rs}\\
+	\frac{\partial}{\partial q_r} \frac{\partial}{\partial q_s}= \frac{\partial}{\partial q_s}\frac{\partial}{\partial q_r} 
+	\end{cases}
+	\end{equation}
+
+	\item It would be possible to take
+	\begin{equation}
+	p_r = -i\hbar \partial/\partial q_r + f_r(q)
+	\end{equation}
+	Then for an arbitrary real function $f$ of the $q$'s we have
+	\begin{equation}
+	[f,p_r]=\partial f/\partial q_r
+	\end{equation}
+	utilization of the commuting property of $\partial/\partial q_r$ and $\partial/\partial q_s$ we obtain
+	\begin{equation}
+	(p_r - f_r)(p_s f_s) = (p_s - f_s)(p_r - f_r)
+	\end{equation}
+	then
+	\begin{equation}
+	[p_r,f_s]=[p_s,f_r]
+	\end{equation}
+	thus
+	\begin{equation}
+	\partial f_s /\partial q_r = \partial f_r /\partial q_s
+	\end{equation}
+	showing that the functions $f_r$ are all of the form
+	\begin{equation}
+	f_r = \partial f_r/\partial q_s
+	\end{equation}
+	then
+	\begin{equation}
+	p_r= -i\hbar \partial / \partial q_r + \partial F/\partial q_r
+	\end{equation}
+
+	\item $\partial F/\partial q_r$ can be eliminated by adding a phase factor. Using stars to distinguish quantities referring to the new representation with the new phase factors,
+	\begin{equation}
+	\bra{q'...q_n'^*}=e^{i\gamma'}\bra{q'...q'_n}
+	\end{equation}
+	where $\gamma'= \gamma(q')$ is a real function of the $q'$'s. Then
+	\begin{equation}
+	\rangle^*=e^{-i\gamma} \rangle
+	\end{equation}
+	then
+	\begin{equation}
+	\left(\frac{\partial}{\partial q_r}\right)^* \psi \rangle ^* = \frac{\partial \psi}{\partial q_r}^* = e^{-i\gamma} \frac{\partial \psi}{\partial q_r} \rangle = e^{-i\gamma} \frac{\partial}{\partial q_r} e^{i\gamma} \psi \rangle^*
+	\end{equation}
+	thus
+	\begin{equation}
+	\left(\frac{\partial}{\partial q_r}\right)^* =  e^{-i\gamma} \frac{\partial}{\partial q_r} e^{i\gamma}
+	\end{equation}
+	with utilization of $[f,p_r]=\partial f/\partial q_r$,
+	\begin{equation}
+	\left(\frac{\partial}{\partial q_r}\right)^* =\frac{\partial}{\partial q_r} + i\frac{\partial \gamma}{\partial q_r}
+	\end{equation}
+	By choosing $\gamma$ so that
+	\begin{equation}
+	F= \hbar \gamma + constant
+	\end{equation}
+	then
+	\begin{equation}
+	p_r = -i\hbar (\partial/\partial q_r)^*
+	\end{equation}
+
+	\item The momentum representation utilizes
+	\begin{equation}
+	p'\bracket{q'}{p'} = \bracketl{q'}{p}{p'} = -i\hbar \frac{d}{dq'} \bracket{q'}{p'}
+	\end{equation}
+	whose solution is
+	\begin{equation}
+	\bracket{q'}{p'}=c' e^{ip'q'/\hbar}
+	\end{equation}
+	We need
+	\begin{equation}
+	\begin{cases}
+	\int_{-\infty}^{\infty} e^{iax} \, dx = 2\pi \delta(a)\\
+	\int_{-\infty}^{\infty} f(a)\,da \int_{-g}^g e^{-iax} \, dx = 2\pi f(0)
+	\end{cases}
+	\end{equation}
+	and we get
+	\begin{equation}
+	\bracket{p'}{p''} = |c'|^2h\delta(p'-p'')
+	\end{equation}
+	showing the analogy between $q$ and $p$. Thus
+	\begin{equation}
+	q=i\hbar d/dp
+	\end{equation}
+	and
+	\begin{equation}
+	\bracket{q'}{p'}= h^{-1/2}e^{ip'q'/\hbar}
+	\end{equation}
+
+	\item it is assumed that the superposition relationship holds when $D$ is acted on the ket vectors, which indicates that $D$ is an unitary operator, or
+	\begin{equation}
+	D^\dagger D = 1
+	\end{equation}
+
+	\item for a displaced dynamical variable $v_d$,
+	\begin{equation}
+	v_d=DvD^{-1}
+	\end{equation}
+
+	\item From physical continuity we should expact a displaced ket $\ket{Pd}$ to tend to the original $\ket{P}$ and we may further expect the limit
+	\begin{equation}
+	\lim_{\delta x \rightarrow 0} \frac{\ket{Pd} - \ket{P}}{\delta x} = \lim_{\delta x-> 0} \frac{D-1}{\delta x} \ket{P}
+	\end{equation}
+	to exist. This requires that the limit
+	\begin{equation}
+	\lim_{\delta x \rightarrow 0} (D-1) / \delta x
+	\end{equation}
+	shall exist. This limit is a linear operator which we shall call the \emph{displacement operator} for the $x$-direction and denote by $d_x$. The arbitrary numerical factor $e^{i\gamma}$ with $\gamma$ real which we may multiply into $D$ must be made to tend to unity as $\delta x \rightarrow 0$ and then introduces an arbitrariness in $d_x$, namely, $d_x$ may be replaced by
+	\begin{equation}
+	\lim_{\delta x \rightarrow 0} (D e^{i\gamma}-1) /\delta x = \lim_{\delta x \rightarrow 0} (D -1+i \gamma) /\delta x=d_x + ia_x
+	\end{equation}
+	where $a_x$ is the limit of $\gamma/\delta x$. Thus $d_x$ contains an arbitrary additive pure imaginary number.
+
+	For $\delta x$ small 
+	\begin{equation}
+	D=1+\delta x d_x
+	\end{equation}
+	Considering that $D$ is a unitary oprerator,
+	\begin{equation}
+	(1+\delta x \bar{d_x})(1+\delta x d_x) = 1
+	\end{equation}
+	thus 
+	\begin{equation}
+	\delta x (\bar{d_x} + d_x) =0
+	\end{equation}
+	Thus $d_x$ is a pure imaginary linear operator. Then
+	\begin{equation}
+	v_d = (1+\delta x d_x)v(1-\delta x \bar{d_x})=v+\delta x (d_x v -v d_x)
+	\end{equation}
+	showing that
+	\begin{equation}
+	\lim_{\delta x \rightarrow 0} (v_d -v) /\delta x = d_x v - v d_x
+	\end{equation}
+
+	If we suppose a piece of apparatus which has been set up to measure $x$, to be displaced a distance $\delta x$ in the direction of the $x$-axis, it will measure $x-\delta x$, hence 
+	\begin{equation}
+	x_d=x-\delta x
+	\end{equation}
+	Thus
+	\begin{equation}
+	d_x x - x d_x = -1
+	\end{equation}
+	Then
+	\begin{equation}
+	p_x = i\hbar d_x
+	\end{equation}
+
+\end{enumerate} 
+
+\section{The Equations of Motion}
+
+\subsection{Definitions}
+\begin{definition}
+\begin{description}
+	\item[Constant of the motion]
+	We call $v_t$ or $v$ a constant of the motion if
+	\begin{equation}
+	v_t = v_{t_0} = v
+	\end{equation}
+\end{description}
+\end{definition}
+
+\begin{definition}
+\begin{description}
+	\item[Heisenberg representation]
+	A representation in which all the basic vectors are eigenvectors of the energy and so correspond to stationary states in the Heisenberg picture.
+\end{description}
+\end{definition}
+
+
+\subsection{Notes}
+\begin{enumerate}
+
+	\item It is assumed that a superposition relation holds through out time. $\Rightarrow$ $T$ is a linear operator independent of $P$ and depending only on $t$ and $t_0$:
+	\begin{equation}
+	\Rightarrow
+	\begin{cases}
+	 \ket{Pt}=T\ket{Pt_0}\\
+	 \ket{Pt}=\ket{Pt^a}+\ket{Pt^b}=T(\ket{Pt_0^a}+\ket{Pt_0^b})
+	 \end{cases}
+	\end{equation}
+
+	\item It is assumed that $\ket{Pt}$ has the same length as the corresponding $\ket{Pt_0}$. $\Rightarrow$ $T$ is a unitary transformation:
+	\begin{equation}
+	\bar{T}T=1
+	\end{equation}
+
+	\item There exists a limit
+	\begin{equation}
+	\frac{d\ket{Pt_0}}{dt_0} =\left\{\lim_{t \rightarrow t_0} \frac{T-1}{t-t_0}\right\}\ket{Pt_0}
+	\end{equation}
+
+	\item \sch's form for the equations of motion:
+	\begin{equation}
+	i\hbar \frac{d\ket{Pt}}{dt}=H(t)\ket{Pt}
+	\end{equation}
+
+	\item Using $T$, we get
+	\begin{equation}
+	i\hbar \frac{dT}{dt}\ket{Pt_0}=H(t)T\ket{Pt_0}
+	\end{equation}
+	It holds for any ket, thus
+	\begin{equation}
+	i\hbar \frac{dT}{dt}=H(t)T
+	\end{equation}
+
+	\item Introducing a representation with a complete set of commuting observables $\xi$ diagonal and putting $\bracket{\xi'}{Pt}$ equal to $\psi(\xi't)$, we have, passing to the standard ket notation,
+	\begin{equation*}
+	\ket{Pt}=\psi(\xi t)\rangle
+	\end{equation*}
+	\sch's equation becomes
+	\begin{equation}
+	i\hbar \frac{\partial}{\partial t} \psi(\xi t)\rangle = H\psi(\xi t) \rangle
+	\end{equation}
+	
+	\item In Heisenberg's picture,
+	\begin{equation}
+	v_t=T^{-1} v T
+	\end{equation}
+	Differentiating with respect to $t$, we get
+	\begin{equation}
+	\frac{dT}{dt} v_t + T \frac{dv_t}{dt} = v\frac{dT}{dt}
+	\end{equation}
+	Using relation between $H$ and $T$,
+	\begin{equation}
+	i\hbar \frac{dv_t}{dt}= v_t H_t - H_t v_t
+	\end{equation}
+	Thus
+	\begin{equation}
+	\frac{dv_i}{dt}=[v_t,H_t]
+	\end{equation}
+
+	\item The laws of conservation of energy, momentum, and angular momentum hold for an isolated system in the Heisenberg picture in quantum mechanics, as they hold in classic mechanics.
+
+	\item It can be Integrated
+	\begin{equation}
+	T= e^{-iH(t-t_0)/\hbar}
+	\end{equation}
+	with the help of the initial condition that $T=1$ for $t=t_0$. 
+	The time-dependent wave function $\psi(\xi t)$ representing a stationary state of energy $H'$ will vary with time according to the law 
+	\begin{equation}
+	\psi(\xi t) = \psi_0(\xi) e^{-iH't/\hbar}
+	\end{equation}
+	and \sch's wave equation reduces to
+	\begin{equation}
+	H \psi_0 \rangle = H' \psi_0 \rangle
+	\end{equation}
+
+
+\end{enumerate}
+
+
+\subsection{Digests}
+
+{\Large Free Particle:}
+
+\begin{equation}
+i\hbar \dot{x}_t = i\hbar \frac{dx_t}{dt} = x_t c(m^2c^2+\sum p_k^2)^{1/2} - c (m^2c^2+\sum p_k^2)^{1/2} x_t
+\end{equation}
+
+\begin{equation}
+q_r f - fq_r = i\hbar \partial f / \partial p_r
+\end{equation}
+
+\begin{equation}
+\dot{x}_t = \frac{\partial}{\partial p_x} c(m^2c^2 + \sum p_k^2)^{1/2}=\frac{c^2 p_x}{H}
+\end{equation}
+
+\begin{equation}
+v_t=(\sum \dot{x}_{t,k}^2)^{1/2} = c^2 (\sum p_k^2)^{1/2}/H
+\end{equation}
+
+Let us consider a state that is an eigenstate of the momenta, belonging to the eigenvalues $p_x',p_y',p_z'$. This state must be an eigenstate of the Hamiltonian, belonging to the eigenvalue
+\begin{equation}
+H' = c(m^2c^2 +\sum p_k'^2)^{1/2}
+\end{equation}
+and must therefore be a stationary state. The possible values for $H'$ are all numbers from $mc^2$ to $\infty$, as in the classical theory. The wave function $\psi(xyz)$ representing this state at any time in \sch's representation must satisfy 
+\begin{equation}
+p_x'\psi(xyz)\rangle = p_x \psi (xyz) \rangle = - i\hbar \frac{\partial \psi (xyz)}{\partial x} \rangle
+\end{equation}
+with similar equations for $p_y$ and $p_z$.
+
+Thus
+\begin{equation}
+\psi(xyzt)= a_0 e^{i(\sum p_k'k -H't)\hbar}
+\end{equation}
+which describes plane waves in space-time.
+\begin{equation}
+\begin{cases}
+\nu = H' / h \\
+\lambda = h/(\sum p_k'^2)^{1/2} = h/P'\\
+\lambda \nu = H' / P' = c^2/v'
+\end{cases}
+\end{equation}
+The group velocity of the waves, is
+\begin{equation}
+\frac{d\nu}{d(1/\lambda)}
+\end{equation}
+which gives, 
+\begin{equation}
+\frac{dH'}{dP'} = c\frac{d}{dP'} (m^2c^2 + P'^2)^{1/2} = \frac{c^2P'}{H'} = v'
+\end{equation}
+
+
+{\Large The motion of wave packets}
+\begin{equation}
+\psi(qt) = Ae^{iS/\hbar}
+\end{equation}
+where $A$ and $S$ are real functions of the $q$'s and $t$ which do not vary very rapidly with their arguments. Then \sch's wave equation gives 
+\begin{equation}
+i\hbar \frac{\partial}{\partial t}A e^{iS/\hbar}\rangle = H(q_r, p_r) A e^{iS/\hbar} \rangle
+\end{equation}
+or
+\begin{equation}
+\left\{i\hbar \frac{\partial A}{\partial t } - A\frac{\partial S}{\partial t}\right\} \rangle= e^{-iS/\hbar} H(q_r,p_r) Ae^{iS/\hbar} \rangle
+\end{equation}
+Now $e^{-iS/\hbar}$ is evidently a unitary linear operator and may be used for $U$ to give us a unitary transformation. The $q$'s remain unchanged by this transformation, each $p_r$ goes over into
+\begin{equation}
+e^{-iS/\hbar}H(q_r,p_r)e^{iS/\hbar} = H(q_r,p_r+\partial S/\partial q_r)
+\end{equation}
+since algebraic relations are preserved by the transformation. Thus it becomes
+\begin{equation}
+\left\{i\hbar \frac{\partial A}{\partial t} -A\frac{\partial S}{\partial t}\right\}\rangle = H\left(q_r,p_r +\frac{\partial S}{\partial q_r}\right) A\rangle
+\end{equation}
+If we neglect the $\hbar$ and equating $p_r$ with $-i\hbar \partial/\partial q_r$, we get
+\begin{equation}
+-\frac{\partial S}{\partial t} = H_c\left(q_r, \frac{\partial S}{\partial q_r} \right)
+\end{equation}
+The equation is determined by the classical Hamiltonian function $H_c$ and is known as the \emph{Hamilton-Jacobi equation}.
+
+Multiplying $\langle Af$ on the left, we get
+\begin{equation}
+\langle A f \left\{i\hbar\frac{\partial A}{\partial t}-A\frac{\partial S}{\partial t}\right\} \rangle = \langle A f  H\left(q_r,p_r +\frac{\partial S}{\partial q_r}\right) A\rangle
+\end{equation}
+Having it subtracted by its conjugate complex, we obtain
+\begin{equation}
+2\langle A f \frac{\partial A}{\partial t} = \langle A \left[f,H(q_r,p_r+\frac{\partial S}{\partial q_r}\right] A \rangle
+\end{equation}
+We now have to evaluate the P.B.
+\begin{equation}
+[f,H(q_r, p_r + \partial S/\partial q_r)]
+\end{equation}
+One assumption that $\hbar$ can be counted as small enables us to expand $H(q_r,p_r + \partial S / \partial q_r)$ as a power series in the $p$'s. The terms of zero degree will contribute nothing to the P.B. The terms of the first degree in the $p$'s give a contribution to the P.B. which can be evaluated most easily with the help of the classical formula\footnote{This formula being valid also in the quantum theory if $u$ is independent of the $p$'s and $v$ is linear in the $p$'s.}. The amount of this contribution is
+\begin{equation}
+\sum_s \frac{\partial f}{\partial q_s} \left[\frac{\partial H(q_r,p_r)}{\partial p_s}\right]_{p_r=\partial S/ \partial q_r}
+\end{equation}
+The terms of higher degree in the $p$'s give contributions to the P.B. which vanish when $\hbar \rightarrow 0$. Thus, with neglect of terms involving $\hbar$, 
+\begin{equation}
+\mean{f\frac{\partial A^2}{\partial t}} = \mean{A^2 \sum_s \frac{\partial f}{\partial q_s} \left[\frac{\partial H_c(q_r,p_r)}{\partial p_s}\right]_{p_r=\partial S/\partial q_r}}
+\end{equation}
+Now if $a(q)$ and $b(q)$ are any two functions of the $q$'s, there is
+\begin{equation}
+\mean{a(q)b(q)}=\int a(q')dq'b(q')
+\end{equation}
+and so
+\begin{equation}
+\mean{a(q)\frac{\partial b(q)}{\partial q_r}}=-\mean{\frac{\partial a(q)}{\partial q_r}b(q)}
+\end{equation}
+provided $a(q)$ and $b(q)$ satisfy suitable boundary conditions. Then
+\begin{equation}
+\mean{f\frac{parital A^2}{\partial t}} = -\mean{f\sum_s \frac{\partial}{\partial q_s}\left\{A^2 \left[\frac{\partial H_c(q_r,p_r) }{\partial p_s}\right]_{p_r=\partial S/\partial q_r}\right\}}
+\end{equation}
+Since this holds for an arbitrary real function $f$, we must have
+\begin{equation}
+\frac{\partial A^2}{\partial t} = - \sum_s \frac{\partial}{\partial q_s}\left\{A^2 \left[\frac{\partial H_c(q_r,p_r) }{\partial p_s}\right]_{p_r=\partial S/\partial q_r}\right\}
+\end{equation}
+This is the equation for the amplitude $A$ of the wave function.
+
+
+
+
+
+
+%%%%%%%%%%% There is a large blank here %%%%%%
+
+\section{Elementary Applications}
+
+\subsection{digests}
+{\Large The harmonic oscillator} 
+\begin{equation}
+H=\frac{1}{2m} (p^2 + m^2 \omega^2 q^2)
+\end{equation}
+using Heisenberg equations of motion,
+\begin{equation}
+\begin{cases}
+\dot{q_t}=[q_t, H] = p_t / m \\
+\dot{p_t} = [p_t, H] = - m \omega^2 q_t
+\end{cases}
+\end{equation}
+construct an operator
+\begin{equation}
+\eta = \frac{1}{\sqrt{2m\hbar \omega}} (p+im\omega q)
+\end{equation}
+and it is easily deduced that
+\begin{equation}
+\dot{\eta_t} = (2m\hbar \omega)^{-1/2}(-m\omega^2 q_t + i\omega p_t) = i\omega \eta_t
+\end{equation}
+Having it integrated,\footnote{海森堡表象的一大好处在于算符运算 'is analogous to the classic theory'，所以是可以按照经典的方式进行算符的处理——虽然算符的互换性并不能被保证。}
+\begin{equation}
+\eta_t = \eta_0 e^{i\omega t}
+\end{equation}
+where $\eta_0$ is a linear operator independent of $t$, and is equal to the value of $\eta_t$ at time $t=0$. The above equations are all as in the classical theory.
+
+Then
+\begin{equation}
+\hbar \omega \eta \bar{\eta}=(2m)^{-1} (p+im\omega q)(p-im\omega q)=H-\frac{1}{2}\hbar \omega
+\end{equation}
+and similarly
+\begin{equation}
+\hbar \omega \bar{\eta} \eta = H +\frac{1}{2} \hbar \omega
+\end{equation}
+Thus
+\begin{equation}
+\bar{\eta}\eta - \eta \bar{\eta} = 1
+\end{equation}
+Then
+\begin{equation}
+\bar{\eta} \eta^n - \eta^n \bar{\eta} = n \eta^{n-1}
+\end{equation}
+Also
+\begin{equation}
+\begin{cases}
+\hbar \omega \bar{\eta} \eta \bar{\eta} = \bar{\eta} H - \frac{1}{2} \hbar \omega \bar{\eta} \\
+\hbar \omega \bar{\eta} \eta \bar{\eta} = H \bar{\eta} + \frac{1}{2} \hbar \omega \bar{\eta}
+\end{cases}
+\end{equation}
+Thus
+\begin{equation}
+\bar{\eta} H - H \bar{\eta} = \hbar \omega \bar{\eta}
+\end{equation}
+
+
+
+
+

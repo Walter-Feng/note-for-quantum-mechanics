@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 1520214564 "chap1.xdv" "chap1.pdf" "chap1" 1520214565
+  "chap1.xdv" 1520214562 4992 77c63dee88f6b5b9b194479a5695e9bf "xelatex"
+  (generated)
+  "chap1.pdf"
+["xelatex"] 1520214561 "chap1.tex" "chap1.xdv" "chap1" 1520214565
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1491389445 32192 c18bc721db8195c55b3f5b993e802bbf ""
+  "/usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt" 1492672231 3746849 0b491056ceb54f69e6ea9ccec3cead46 ""
+  "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "chap1.aux" 1520063644 2833 3fcade4e8a2406a9db53c7eef16fe707 ""
+  "chap1.tex" 1520214560 39919 108280d1bd4ccc4f2a307d073450c3a9 ""
+  (generated)
+  "chap1.log"
+  "chap1.xdv"

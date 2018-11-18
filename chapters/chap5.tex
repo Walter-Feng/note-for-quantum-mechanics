@@ -1,0 +1,736 @@
+\chapter{高等物理化学——量子化学课程笔记}
+\section{Linux 具体操作}
+\begin{enumerate}
+	\item 通过SSH连接所需服务器；
+	\item 常用操作、后缀列表：
+	\begin{description}
+		\item[cd]
+			进入输入目录的文件夹；
+			`cd amusphere/'
+			P.S : `cd ..' 返回上一级文件夹
+		\item[ls]
+			列出所在文件夹的子文件夹；
+
+		\item[vi]
+			打开文件查看内容；
+
+			P.S :输入不存在的文件可直接创立该文件；
+		\item[pwd]
+			显示所在文件夹；
+
+		\item[mkdir]
+			在所在目录下建立文件夹：
+			`mkdir levest' 表示建立名字为`levest'的文件夹
+
+		\item[Ins/i]修改文件；`esc'退出修改，':wq!' 保存文件并退出;':q！’不保存退出。
+		
+		\item[*.log]
+			输出文件；
+
+		\item[*.com]
+			输入文件／文本文件；
+
+		\item[cp] 复制文件至某个目录
+			`cp einfield.com slot' 表示将`einfield.com' 在`slot'文件夹下进行粘贴
+
+		\item[mv] 重命名文件/文件夹（后缀还是要加好）;
+
+		\item[rm] remove; `rm file.com' 表示删除该文件；`rm -r rescot' 表示删除该文件夹；
+
+		\item[Shift+G] 移至最后一行;
+
+		\item[gg] 似乎是回到开头；
+
+		\item[tail] 打开文件并至最后一行；
+
+		\item[/`Zero'] 搜索文件含`Zero'的地方；
+
+		\item[formchk] 将chk二进制文件转化;
+	\end{description}
+
+\end{enumerate}
+
+\section{调教 Gaussian 步骤}
+\begin{enumerate}
+	\item 运行GaussView，画出苯甲酸分子；
+	\item 点击Calculate $\Rightarrow$ Gaussian Calculation Setup;
+	\item 调教各种参数；
+	\item 若在windows内部运行，选择后缀为*.gif保存；若在Linux系统，选择后缀为*.com;
+	\item 在windows内部运行Gaussian时直接运行；若在Linux系统，
+	\begin{itemize}
+		\item 修改.com文件中内容：\%chk=benzoicacid.chk
+		\item 将脚本文件PBS\_Script 拷贝到输入文件所在文件夹
+		\item 输入命令 qsub PBS\_script
+		\item 等待。
+	\end{itemize}
+\end{enumerate}
+
+\section{理论课笔记}
+\begin{enumerate}
+	\subsection{量子的化学}
+	\item 算符对易子：
+	\begin{equation}
+	[A,B] = AB - BA
+	\end{equation}
+
+	\item 算符对易常用公式：
+	\begin{align}
+	[A,BC]& = [A,B]C - B[A,C]\\
+	[AB,C]& = [A,C]B + A[B,C]
+	\end{align}
+
+	\item $x$与$p$的对易关系：
+	\begin{equation}
+	[x,p]\psi=(xp-px)\psi = -i\hbar[x \frac{\partial}{\partial x}\psi-\frac{\partial}{\partial x}(x\psi)]= i\hbar \psi
+	\end{equation}
+
+	\item 波函数是量子态在基组中的投影：
+	\begin{equation}
+	\psi (x) = \bracket{x}{\psi} \quad \psi(p) = \bracket{p}{\psi}
+	\end{equation} 
+
+\end{enumerate}
+
+\subsection{量子与经典}
+
+\begin{enumerate}
+	\item 一维简谐振子的哈密顿量求解:
+	\begin{align*}
+	\hat{H}&=\frac{\hat{p}^2}{2m}+\frac{m\omega^2\hat{x}^2}{2}\\
+			&=h\omega\frac{m\omega}{2h}(\hat{x}^2+\frac{1}{m^2\omega^2}\hat{p}^2)\\
+			&=h\omega\{\sqrt{\frac{m\omega}{2h}}(\hat{x}-\frac{1}{m\omega}\hat{p})\cdot\sqrt{\frac{m\omega}{2h}}(\hat{x}+\frac{1}{m\omega}\hat{p})-\frac{m\omega}{2h}\frac{i}{m\omega}[\hat{x},\hat{p}]\}\\
+			&=h\omega(\hat{a}^\dagger \hat{a}+\frac{1}{2})
+			\end{align*}
+
+			其中，
+			\begin{align}
+			&\hat{a}^\dagger=\sqrt{m\omega}{2h}(\hat{x}-\frac{i}{m\omega}\hat{p})\\
+			&\hat{a}=\sqrt{m\omega}{2h}(\hat{x}+\frac{i}{m\omega}\hat{p})\\
+			&\hat{a}^\dagger\ket{n}=\sqrt{n+1}\ket{n+1}\\
+			&\hat{a}\ket{n}=\sqrt{n}\ket{n-1}\\
+			&\hat{a}^\dagger\hat{a}\ket{n}=n\ket{n}\\
+			\end{align}
+
+
+	\item 
+	\begin{align*}
+	\hat{O} & = \sum_i \ket{\phi _i} \bra{\phi_i} \hat{O} \sum_j \ket{\phi _j} \bra{\phi_j} \\
+			& = \sum_{ij} \ket{\phi_i} \bracketl{\phi_i}{\hat{O}}{\phi_j}\bra{\phi_j}\\
+			& = \sum_{ij} \bracketl{\phi_i}{\hat{O}}{\phi_j} \ket{\phi_i}\bra{\phi_j}\\
+			& = \sum_{ij} O_{ij} \ket{\phi_i}\bra{\phi_j}
+			\end{align*}
+
+	\item 描述体系状态的本质上是$\ket{\psi}$,波函数只是$\ket{\psi}$在实空间上的投影。
+
+\end{enumerate}
+
+\begin{theorem}
+Ehrenfest Theorem:
+
+\begin{align}
+\mean{\textbf{p}}= m \frac{d \mean{\textbf{x}}}{dt}\\
+\mean{\textbf{F}}= \frac{d\mean{\textbf{p}}}{dt}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+	充分考虑到
+	\begin{equation}
+	\frac{d\ket{\phi}}{dt}=\frac{1}{i\hbar}[\frac{\textbf{p}^2}{2m}+V(\textbf{x})]\ket{\phi}
+	\end{equation}
+
+	\begin{align*}
+	\frac{d \mean{\textbf{x}}}{dt}  & = \frac{d \bracketl{\psi}{\textbf{x}}{\psi}}{dt} \\ 
+	& = \frac{d\bra{\psi}}{dt} \textbf{x} \ket{\psi} + \bra{\psi} \textbf{x} \frac{d\ket{\psi}}{dt} \\
+	&= - \frac{1}{i \hbar}\bra{\psi}[\frac{\textbf{p}^2}{2m}+V(\textbf{x})]\textbf{x}\ket{\psi}+ \bra{\psi}\textbf{x}\frac{1}{i\hbar}[\frac{\textbf{p}^2}{2m}+V(\textbf{x})]\ket{\psi}\\
+	&= -\frac{1}{i\hbar}(\frac{\textbf{p}^2}{2m}\textbf{x}-\textbf{x}\frac{\textbf{p}^2}{2m})\ket{\psi}\\
+	&= -\frac{1}{2mi\hbar}\bracketl{\psi}{[\textbf{p}^2,\textbf{x}]}{\psi}\\
+	&=-\frac{1}{2mi\hbar}\bracketl{\psi}{2\textbf{p}[\textbf{p},\textbf{x}]}{\psi}\\
+	&=\frac{1}{m}\bracketl{\phi}{\textbf{p}}{\phi}\\
+	&=\mean{\textbf{p}}
+	\end{align*}
+
+	\begin{align*}
+	\frac{d\mean{\textbf{p}}}{dt} &= \frac{d\bracketl{\psi}{\textbf{p}}{\psi}}{dt}\\
+	&=\frac{d\bra{\psi}}{dt} \textbf{p} \ket{\psi} + \bra{\psi} \textbf{p} \frac{d\ket{\psi}}{dt} \\
+	&= - \frac{1}{i \hbar}\bra{\psi}[\frac{\textbf{p}^2}{2m}+V(\textbf{x})]\textbf{p}\ket{\psi}+ \bra{\psi}\textbf{p}\frac{1}{i\hbar}[\frac{\textbf{p}^2}{2m}+V(\textbf{x})]\ket{\psi}\\
+	&= -\frac{1}{i\hbar}\bracketl{\psi}{[V(\textbf{x}),\textbf{p}]}{\phi} \\
+	& = -\frac{1}{i\hbar}\bracketl{\phi}{i\hbar\frac{\partial V(\textbf{x})}{\partial \textbf{x}}}{\phi}\\
+	& = \bracketl{\phi}{[-\frac{\partial V(\textbf{x})}{\partial \textbf{x}}]}{\phi}\\
+	& = \mean{\textbf{F}}
+	\end{align*}
+
+	\begin{align*}
+	[V(\textbf{x}),\textbf{p}] \ket{\psi} & = [V(x),-i\hbar \frac{\partial}{\partial \textbf{x}}]\ket{\psi}\\
+	& = -i\hbar V(x) \frac{\partial }{\partial \textbf{x}} + i\hbar \frac{\partial}{\partial \textbf{x}}[V(\textbf{x})\ket{\psi}]\\
+	&= -i\hbar V(x) \frac{\partial }{\partial \textbf{x}}+ i\hbar \frac{\partial V(\textbf{x})}{\partial \textbf{x}}\ket{\psi} + i\hbar V(\textbf{x}) \frac{\partial \ket{\psi}}{\partial \textbf{x}}\\
+	&= i\hbar \frac{\partial V(\textbf{x})}{\partial \textbf{x}} \ket{\psi}
+	\end{align*}
+\end{proof}
+
+\subsection{量子精确解}
+
+\begin{enumerate}
+
+	\item 拉普拉斯算符极坐标变换：
+
+	\begin{equation}
+	\hat{\grad}^2=\frac{1}{r^2}[\frac{\partial}{\partial r}(r^2\frac{\partial}{\partial r})+\frac{1}{\mathrm{sin} \, \theta}\frac{\partial}{\partial \theta}(\mathrm{sin \, \theta}\frac{\partial}{\partial \theta})\frac{1}{\mathrm{sin}^2\,\theta}\frac{\partial^2}{\partial \phi^2}]
+	\end{equation}
+
+	\item 分离变量：
+	\begin{equation}
+	\begin{cases}
+	[-\frac{1}{2r^2}\frac{d}{dr}(r^2\frac{d}{dr})-\frac{Z}{r}-E]\ket{\psi_R}=-\frac{\beta}{2r^2}\ket{\psi_{R}}\\
+	[-\frac{1}{\mathrm{sin}\, \theta}\frac{\partial}{\partial\theta}(\mathrm{sin}\,\theta\frac{\partial}{\partial \theta})-\frac{1}{\mathrm{sin}^2\,\theta}\frac{\partial^2}{\partial \phi^2}]\ket{\psi_Y}=\beta\ket{\psi_Y}\\
+	\\
+	\Rightarrow
+	\begin{cases}
+	\frac{d^2}{d \phi^2}\ket{\psi_\Phi}=-\alpha\\
+	\beta\sin^2{\theta}+\frac{\sin{\theta}}{\ket{\psi_\Theta}}\frac{d}{d\theta}(\sin{\theta}\frac{d\ket{\psi_\Theta}}{d\theta})=\alpha
+	\end{cases}
+	
+	\end{cases}
+	\end{equation}
+
+	\item 球谐函数：
+	\begin{equation}
+	Y_{lm}\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m|)!}{(l+|m|)!}P_l^{|m|}(\cos{\theta})e^{im\phi}}\quad 
+	\begin{cases}
+	l=0,1,2,...,n\\
+	m=0,\pm 1,\pm 2,...,\pm l
+	\end{cases}
+	\end{equation}
+
+	\item 轨道角动量算符：
+	\begin{equation}
+	\hat{L}^2=-h^2[\frac{1}{\sin{\theta}} \frac{\partial}{\partial \theta}+\frac{1}{\sin^2{\theta}} \frac{\partial^2}{\partial \phi^2}]
+	\end{equation}
+
+	\begin{equation}
+	\hat{L}^2Y_{lm}=l(l+1)h^2Y_{lm}
+	\end{equation}
+
+	\begin{equation}
+	\hat{L}_zY_{lm}=mhY_{lm}
+	\end{equation}
+
+	\item 径向波函数：
+	\begin{equation}
+	R_{nl}(r)=\sqrt{(\frac{2Z}{n})^3\frac{(n-l-1)!}{2n[(n+l)!]}}e^{-Zr/n}(\frac{2Zr}{n})^lL^{2l+1}_{n-l-1}(\frac{2Zr}{n})
+	\end{equation}
+	\begin{equation}
+	L_n^\alpha(x)=x^{-\alpha}\frac{1}{n!}(\frac{d}{dx}-1)^nx^{n+\alpha}
+	\end{equation}
+
+	\item 类氢原子轨道为理解其他原子电子结构基础，但并非本征，这是由于未考虑电子之间的相互作用，然而完备基使原子轨道的线性组合能够描述分子轨道。
+
+
+	\item 动能算符的近似描述：
+	\begin{equation}
+	\hat{T}\psi(x)=-\frac{h^2}{2m}\frac{\partial^2}{\partial x^2}\psi(x)\approx\frac{h^2}{2m\Delta x^2}[2\psi(x)-\psi(x+\Delta x)-\psi(x-\Delta x)]
+	\end{equation}
+
+	\begin{equation}
+	T_{ij}=\frac{h^2}{2m\Delta x^2}\times
+	\begin{cases}
+	2,&\quad i=j\\
+	-1,&\quad |i-j|=1\\
+	0,&\quad others
+	\end{cases}
+	\end{equation}
+
+
+	\item 离散变量表象(DVR)，优点：形式简单，图像清晰，方法普适。缺点：基组巨大，不适合大量自由度的计算。
+	\begin{equation}
+	V_{ij}=V(x_i)\delta_{ij}
+	\end{equation}
+	\begin{equation}
+	T_{ij}=\frac{h^2}{2m\Delta x^2}\times
+	\begin{cases}
+	\frac{\pi^2}{3}, &i=j\\
+	\frac{2(-1)^{i-j}}{(i-j)^2},&i\neq j
+	\end{cases}
+	\end{equation}
+\end{enumerate}
+
+\section{量子近似解}
+
+\begin{description}
+	\item[变分法] 在有限空间中寻找最优解；任意波函数对应的能量期望值都不小于最低本征态能量
+
+	\begin{theorem}
+	The eigenstate of the system has the minimum energy compared to all other states.
+	\end{theorem}
+
+	\begin{proof}
+	\begin{align}
+	&\begin{cases}
+	H\ket{\psi_i} = E_i\ket{\psi_i}\\
+	\ket{\psi}=\sum_i c_i \ket{\psi_i}
+	\end{cases}\\
+	\Rightarrow & \bracketl{\psi}{H}{\psi} = \sum_i c_i^* \bracketl{\psi_i}{H \sum_j c_j}{\psi_j} \\
+	=& \sum_{ij}c_i^*c_j E_j \delta_{ij}=\sum_i c_i^* c_i E_i \geq \sum_i c_i^* c_i E_{0}=E_{0}
+	\end{align}
+	\end{proof}
+
+	\item[微扰法] 尽可能利用简单体系的精确解描述复杂问题
+	\begin{equation}
+	H\ket{\psi_i}=E_i\ket{\psi_i} \quad H=H^{(0)} +\lambda H^{(1)}
+	\end{equation}
+
+	\begin{align*}
+	&\begin{cases}
+	\ket{\psi_i} = \ket{\psi_i^{(0)}}+\lambda \ket{\psi_i^{(1)}}\\
+	E_i=E_i^{(0)} + \lambda E_i^{(1)}
+	\end{cases}\\
+	\Rightarrow & (H^{(0)}+\lambda H^{(1)})(\ket{\psi^{(0)}_i}+\lambda \ket{\psi_i^{(0)}})=(E_i^{(0)}+\lambda E^{(1)}_i)(\ket{\psi_i^{(0)}}+\lambda \ket{\psi^{(1)}_i}) \\
+	\Rightarrow & \begin{cases}
+	(H^{(0)}-E_i^{(0)})\ket{\psi_i^{(0)}}=0\\
+	(H^{(0)}-E_i^{(0)})\ket{\psi_i^{(1)}}+(H^{(1)}-E_i^{(1)})\ket{\psi_i^{(0)}} =0
+	\end{cases}\\
+	\Rightarrow & \bracketl{\psi_j^{(0)}}{H^{(0)}-E_i^{(0)}}{\psi_i^{(1)}}=\bracketl{\psi_j^{(0)}}{(E_i^{(1)}-H^{(1)})}{\psi_i^{(0)}}\\
+	\Rightarrow & (E_j^{(0)}-E_i^{(0)})\bracket{\psi_j^{(0)}}{\psi_i^{(1)}}=E_i^{(1)}\delta_{ij} -\bracketl{\psi^{(0)}_j}{H^{(1)}}{\psi_i^{(0)}}\\
+	\Rightarrow &
+	\begin{cases}
+	E_i^{(1)}=\bracketl{\psi_i^{(0)}}{H^{(1)}}{\psi_i^{(0)}} &\quad i=j \\
+	\ket{\psi_i^{(1)}}=\sum_{j\neq i}\frac{\bracketl{\psi^{(0)}_j}{H^{(1)}}{\psi^{(0)}_i}}{E^{(0)}_i-E^{(0)}_j} &\quad i\neq j
+	\end{cases}
+	\end{align*}
+
+	二阶微扰先略。
+
+	微扰应用：
+
+	\begin{equation}
+	T=\frac{p^2}{2m}-\frac{p^4}{8c^2m^3}+....
+	\end{equation}
+	\begin{description}
+		\item 非谐性：对势能项做微扰
+		\begin{equation}
+		V=V(0)+\frac{k}{2}x^2+\frac{\alpha}{6}x^3+\frac{\beta}{24}x^4+...
+		\end{equation}
+		\item Stark效应：对外场做微扰
+		\begin{equation}
+		H=H_0-\mu\cdot F
+		\end{equation}
+	\end{description}
+
+		
+\end{description}
+
+
+\begin{description}
+	\item[全同性原理] 量子世界的全同粒子不可区分，任何两个粒子交换不影响体系的状态；
+
+	\item[交换算符]
+	\begin{equation}
+	\textbf{P}_{12}[f(q_1,q_2,....,q_n)]=f(p_2,p_1,....,p_n)
+	\end{equation}
+	\begin{equation}
+	P_{12}[1s(1)\alpha(1)3s(2)\beta(2)]=1s(2)\alpha(2)3s(1)\beta(1)
+	\end{equation}
+
+	\item[交换算符的本征值]
+	\begin{equation}
+	\textbf{P}_{12}[\textbf{P}_{12}[f(q_1,q_2,.....,q_n)]]=f(q_1,q_2,...,q_n)\Rightarrow P_{12}^2=1
+	\end{equation}
+	Thus
+	\begin{equation}
+	c_i=\pm 1
+	\end{equation}
+
+	交换算符的本征值为实数，只能为$\pm 1$，对应波函数分别称为对称和反对称。不具备对称性的波函数无法用于描述全同粒子。
+
+	\item[玻色子和费米子] 波函数反对称的粒子为费米子，而波函数对称的粒子为玻色子
+
+	\item[反对称粒子的泡利不相容原理]
+	\begin{equation}
+	f(q_1,q_1,....,q_n)=-f(q_1,q_1,....,q_n) \Rightarrow f(q_1,q_1,....,q_n)=0
+	\end{equation}
+	\item[自旋统计] Pauli 使用量子场论证明了自旋统计理论，指出费米子（电子和质子等）拥有半整数自旋，而玻色子（光子和声子等）具有整数自旋，电子具有$\frac{1}{2}$的自旋。
+
+	\item[相对论量子化学] 自旋角动量很自然地以内禀方式蕴含在相对论性狄拉克方程中。作为最低阶非相对论近似，薛定谔方程人为地丢弃了自旋这种相对论效应。
+
+	\item[Slater行列式]
+	\begin{equation}
+	|\Psi(p_1,p_2,...,p_n)|=\frac{1}{\sqrt{N!}}
+	\begin{vmatrix}
+	\ket{\phi_1(q_1)} & \ket{\phi_2(q_1)} & ... & \ket{\phi_n(q_1)}\\
+	\ket{\phi_2(q_2)} & \ket{\phi_2(q_2)} & ... & \ket{\phi_n(q_2)}\\
+	... & ...& ... & ...\\
+	\ket{\phi_1(q_n)} & \ket{\phi_2(q_n)} & ... & \ket{\phi_n(q_n)}\\
+	\end{vmatrix}
+	\end{equation}
+
+	\item[双电子自旋]
+	\begin{equation}
+	\alpha(1)\alpha(2),\beta(1)\beta(2),\alpha(1)\beta(2),\beta(1)\alpha(2)
+	\begin{cases}
+	\frac{1}{\sqrt{2}}[\alpha(1)\beta(2)+\beta(1)\alpha(2)]\\
+	\frac{1}{\sqrt{2}}[\alpha(1)\beta(2)-\beta(1)\alpha(2)]
+	\end{cases}
+	\end{equation}
+
+\end{description}
+
+\begin{align*}
+E&=\frac{\bracketl{\psi}{\hat{H}}{\psi}}{\bracket{\psi}{\psi}}\\
+&=\frac{(\sum_ic_i^*\bra{\phi_i})\hat{H}(\sum_jc_j\ket{\phi_j})}{\sum_ic_i^*\bra{\phi_i}(\sum_jc_j\ket{\phi_j})}\\
+&=\frac{\sum_{ij}c_i^*c_j\bracketl{\phi_i}{\hat{H}}{\phi_j}}{\sum_{ij}c_i^*c_j\bracket{\phi_i}{\phi_j}}\\
+&=\frac{\sum_{ij}c_i^*H_{ij}c_j}{\sum_{ij}c_i^*S_{ij}c_j}\\
+&=\frac{C^*HC}{C^*SC}\\
+&\Rightarrow EC^*SC=C^*HC\\
+&\Rightarrow \partial_{c_k}(EC^*SC)=\partial_{c_k}(C^*HC)\\
+&\Rightarrow (\partial_{c_k}E) C^*SC+E(\partial_{c_k}C^*)SC+EC^*S\partial_{c_k}C=(\partial_{c_k}C^*)HC+C^*H\partial_{c_k}C\\
+&\Rightarrow \partial_{c_k}E = \frac{\partial_{c_k}(HC-ESC)+(C^*H-EC^*S)\partial_{c_k}C}{C^*SC}
+\end{align*}
+\begin{align*}
+&\frac{\partial E}{\partial c_k}=0\\
+&\Rightarrow 
+\begin{cases}
+HC-ESC=0\\
+C^*H-EC^*S=0
+\end{cases}\\
+&\Rightarrow HC=ESC
+\end{align*}
+\begin{align}
+&\begin{cases}
+\ket{\phi_{1s}^{(1)}}=\frac{1}{\sqrt{\pi}}e^{-r_1};\\
+\ket{\phi_{1s}^{(1)}}=\frac{1}{\sqrt{\pi}}e^{-r_2};
+\end{cases}\\
+\Rightarrow& S=\bracket{\phi_{1s}^{1}}{\phi_{1s}^{(2)}}=(1+R+\frac{R^2}{3})e^{-R}
+\end{align}
+
+\begin{align*}
+\bracketl{\phi_{1s}^{(1)}}{\hat{H}}{\phi_{1s}^{(1)}}&=\bracketl{\phi_{1s}^{(1)}}{(-\frac{\grad_e^2}{2}-\frac{1}{r_1}-\frac{1}{r_2}+\frac{1}{R})}{\phi_{1s}^{(1)}}\\
+&=\bracketl{\phi_{1s}^{(1)}}{-\frac{\grad^2_e}{2}-\frac{1}{r_1}}{\phi_{1s}^{(1)}}-\bracketl{\phi_{1s}^{(1)}}{\frac{1}{r_2}}{\phi_{1s}^{(1)}}+\frac{1}{R}\\
+E_{1s}-\bracketl{\phi_{1s}^{(1)}}{\frac{1}{r_2}}{\phi_{1s}^{(1)}}
+&=E_{1s}+J
+\end{align*}
+
+
+\begin{equation*}
+\bracketl{\phi_{1s}^{(2)}}{\hat{H}}{\phi_{1s}^{(2)}}=E_1s+J
+\end{equation*}
+
+\begin{description}
+	\item[库伦积分法]
+	\begin{equation}
+	\begin{cases}
+	\ket{\phi_{1s}^{(1)}}=\frac{1}{\sqrt{\pi}}e^{-r_1}\\
+	\ket{\phi_{1s}^{(2)}}\frac{1}{\sqrt{\pi}}e^{-r_2}
+	\end{cases}
+	\Rightarrow J=(1+\frac{1}{R})e^{-2R}
+	\end{equation}
+
+	\item[交换积分]
+	\begin{equation}
+	\begin{cases}
+	\ket{\phi_{1s}^{(1)}}=\frac{1}{\sqrt{\pi}}e^{-r_1}\\
+	\ket{\phi_{1s}^{(2)}}\frac{1}{\sqrt{\pi}}e^{-r_2}
+	\end{cases}
+	\Rightarrow K=(\frac{1}{R}-\frac{2R}{3})e^{-R}
+	\end{equation}
+	它在分子成键中起到了非常关键的作用，是量子效应。
+\end{description}
+
+\begin{align*}
+& \ket{\psi(c_1,c_2)} = c_1\ket{\psi_{1s}^{(1)}} + c_2 \ket{\psi_{1s}^{(2)}}\\
+\Rightarrow & E(c_1,c_2)= \frac{\bracketl{\psi_(c_1,c_2)}{\hat{H}}{\psi(c_1,c_2)}}{\bracket{\psi(c_1,c_2)}{\psi(c_1,c_2)}}\\
+=&\frac{(c_1^2+c_2^2)(E_{1s}+J)+(c_1^*c_2+c_1c_2^*)(SE_{1s}+K)}{(c_1^2+c_2^2)+(c_1^*c_2+c_1c_2^*)S}\\
+=& (E_{1s}+J)+\frac{(c_1^*c_2+c_1c_2^*)(K-SJ)}{(c_1^2+c_2^2)+(c_1^*c_2+c_1c_2^*)S}\\
+=&(E_{1s}+J)+\frac{K-SJ}{\frac{c_1^2+c_2^2}{c_1^*c_2+c_1c_2^*}+S}
+\end{align*}
+
+\begin{description}
+	\item[平均场近似] 忽略电子动态关联，多电子问题转化为单电子问题，多电子波函数简化为单电子波函数的乘积，使用自洽场得到单电子波函数
+
+	\item[Koopmans 定理]假设离子轨道与中性分子轨道相同，可计算分子的电离能喝亲和势，改变电子数会引起单电子轨道重排和弛豫，与电子关联量级相似，但符号相反
+\end{description} 
+\begin{align*}
+&\mean{\hat{H}}_{Hartree} \\
+=& \bracketl{\Psi(\{r_i\})}{\hat{H}}{\Psi(\{r_i\})}\\
+=&(\prod_i\bra{\phi_i(r_i)})(\sum_k\hat{h}_k+\frac{1}{2}\sum_{k\neq l}\frac{1}{\hat{r}_kl})(\prod_j\ket{\phi_j(r_j)})\\
+=&\sum_k\bracketl{\phi_k(r_k)}{\hat{h}_k}{\phi_k(r_k)}(\prod_{i\neq k}\bra{\phi_i(r_i)})(\prod_{j \neq k}\ket{\phi_j(r_j)})\\
+&+\frac{1}{2}\sum_{k \neq l}\bracketl{\phi_k(r_k)\phi_l(r_l)}{\frac{1}{\hat{r}_{kl}}\phi_k(r_k)\phi_l(r_l)}(\prod_{i \neq \{k,l\}}\bra{\phi_i(r_i)})(\prod_{i \neq \{k,l\}}\ket{\phi_j(r_j)})\\
+=&\sum_k\bracketl{\phi_k(r_k)}{\hat{h}_k}{\phi_k(r_k)}+\frac{1}{2}\sum_{k \neq l}\bracketl{\phi_k(r_k)\phi_l(r_l)}{\frac{1}{\hat{r}_{kl}}}{\phi_k(r_k)\phi_l(r_l)}
+\end{align*}
+
+\begin{description}
+	\item[变分法与基组] Hartree-Fock 变分法中，波函数的形式原则上是任意的，但是波函数的随意变化数字处理起来非常麻烦，使用基组对波函数进行线性展开，对量子化学中的所有电子结构计算都至关重要。
+
+	\item[原子轨道基组] 完备的基组在量子化学是很难实现的，从计算量的角度需要尽可能地减少基组的数目。氢原子的电子结构可解析求解，为理解更复杂原子和分子的电子结构打开了大门。使用氢原子和类氢离子的原子轨道作为基组，是解决复杂化学问题的通用做法，有着重要的意义。
+
+	\item[原子轨道]
+	\begin{equation}
+		\psi(r,\theta,\phi)=R_{nl}(r)Y_{lm}(\theta,\phi)
+	\end{equation}
+
+	\item[Slater基组和Gaussian基组]
+	\begin{equation}
+	\chi(r)\sim e^{-\xi r} \qquad g(r)\sim e^{-\alpha r^2}
+	\end{equation}
+
+	从基组数目角度看，STO比GTO好；
+
+	从波函数积分计算效率角度看，GTO比STO好。
+
+	\item[高斯函数线性组合]
+	\begin{equation}
+	e^{-\xi r}=\frac{\xi}{2\sqrt{\pi}}\int_0^\infty \alpha^{-3/2} e^{-\xi^2/4\alpha}e^{-\alpha r^2} \, d\alpha 
+	\end{equation}
+	\begin{equation}
+	\Rightarrow \xi_\mu(r-R_A)\approx \sum_Pc_{p\mu}g_p(\alpha_{p\mu},r-R_p)
+	\end{equation}
+	\begin{equation}
+	\begin{cases}
+	g_{1s}(\alpha,r)=(8\alpha^3/\pi^3)^{1/4}e^{-\alpha r^2};\\
+	(\alpha,r)=(128\alpha^5/\pi^3)^{1/4}xe^{-\alpha r^2};\\
+	g_{3dxy}(\alpha,r)=(2048\alpha^7/\pi^3)^{1/4}xye^{-\alpha^2}
+	\end{cases}
+	\end{equation}
+\end{description}
+
+\begin{description}
+	\item[Dunning 原子轨道基组] 如 aug-cc-pVDZ, aug-cc-pVTZ, aug-cc-pVQZ, aug-cc-pV5Z...
+
+	aug:弥散, cc: correlation consistent; p: polarized; V: Valence bonds; DZ: double zeta.
+
+	\item[赝势原子轨道基组] 当原子中的电子很多事，内层电子通常对原子性质的影响很小，但是其对应的全电子基组很复杂，为了减少计算量，其贡献可通过有效势能来描述，而且可以包含相对论效应的修正。
+
+	\item[赝势基组]
+	赝势基组包括赝势和基组两部分，内部电子的贡献采用赝势描述，直接放在哈密顿量里，外层价电子采用一般的基组。
+
+	LANL1只考虑加电子，LANL2系列除了加电子外，还考虑次外层电子，因为他们与价层的能查不明显，而且对成键有贡献。
+
+	LanL2DZ：对H-Ne使用D95V全电子基组，对Na-Bi使用赝势基组，也就是LANL有效核势加上DZ基组；LanL2DZ是常用基组，适合过渡金属等中等质量的金属元素。
+
+	\item[总能量] 变分法保证基组越大，HF能量越小，越接近于精确值。
+
+	\item[Hessian矩阵]
+	\begin{equation}
+	F_{ij}=\frac{1}{\sqrt{m_im_j}}\frac{\partial^2 U}{\partial x_i \partial x_j}
+	\end{equation}
+
+	\item[振动频率]
+	\begin{equation}
+	\sum_{j-1}^N (F_{ij}-\delta_{ij}\lambda_k)l_{jk}\Rightarrow det(F_{ij}-\delta_{ij}\lambda_{k})=0
+	\end{equation}
+\end{description}
+
+\begin{description}
+	\item[电子关联] Hartree-Fock理论中采用平均场处理电子-电子相互作用，缺乏电子关联，直接用多电子基组展开多电子波函数计算量巨大，很难实现。
+
+	\item[如何有效加入电子关联] 以Hartree-Fock得到的单Slater行列式为基础，考虑多电子关联的主要方法有CI(Configurate Interaction)、MCSCF(Multi-Configured Self-Consistent Field)、MPn、CC(Couple Cluster)等。
+
+	HF方法的计算量与电子数的四次方成正比，MP2为五次方，CISD和CCS为六次方，CCSD（T）为七次方，CISDT和CCSDT为八次方，随着电子数增加而迅速增加。
+
+	\item[多电子组态] 在Hartree-Fock分子轨道的基础上，组态相当于多电子组态，用之可展开多电子波函数，对角化多电子哈密顿量，得到基态和激发态性质。
+
+	若有K个分子轨道，每个轨道最多占据两个电子，总电子书数N，则n激发组态数为
+	\begin{equation}
+	C_N^nC_{2K-N}=\frac{N!}{n!(N-n)!}\frac{(2K-N)!}{n!(2K-N-n)!}
+	\end{equation}
+
+	每个组态都可以用Slater行列式表示。
+
+
+	\item[多电子波函数的组态线性组合] 
+	\begin{align*}
+	\ket{\Phi} &= c_0\ket{\psi_0} +\sum_{ra}c_a^r\ket{\psi_a^r}+\sum_{a<b,r<s}c_{ab}^{rs}\ket{\psi_{ab}^{rs}}+\sum_{a<b<c,r<s<t}c^{rst}_{abc}\ket{\psi^{rst}_{abc}}+...\\
+	&=c_0\ket{\psi_0} + c_S\ket{S}+c_D\ket{D}+c_T\ket{T}+...
+	\end{align*}
+
+	Full CI（FCI）包括所有可能的激发，可以给出多电子问题的精确解，
+
+	实际上即使我们只考虑有限个单电子基组，所有可能的N-电子基组数目也非常庞大。
+
+	通常需要对组态进行阶段，只处理有限个N-电子基组。如只考虑单激发，成为CIS；截断到双激发，成为CISD。
+	
+
+	\item[组态相互作用关系] 单激发对基态能量没有直接贡献，双激发对基态能量的修正起首要作用，Hartree Fock的本征值问题等价于确保组态与单激发不直接混合，相差两个激发的组态之间没有直接相互作用。
+
+	\item[Brillouin 定理]
+	\begin{equation}
+	\bracketl{\psi_0}{\hat{H}}{\psi_a^r}=\bracketl{a}{\hat{h}}{r}+\sum_b\bra{ab}\ket{rb}=\bracketl{\phi_a}{\hat{f}}{\phi_r}=0
+	\end{equation}
+
+	\begin{align*}
+	\bracketl{\psi_0}{\hat{H}}{\psi_a^r}&=(\prod_i\bra{\phi_i})O_1(\prod_j\ket{\phi_j})\\
+	&=\sum_k(\prod_i\bra{\psi{\phi_i}})h_k(\prod_l\ket{\phi_j})\\
+	&=\sum_k \bracketl{\phi_k}{h_k}{\phi_k}*\prod_{i \neq k} \bra{\phi_i} \prod_{j \neq k} \bra{\phi_j}\\
+	&-\sum_k \bracketl{\phi_k}{h_k}{\phi_k}
+	\end{align*}
+\end{description}
+
+\begin{description}
+	\item[Thomas-Fermi 理论]
+		是现代密度泛函理论的雏形，能量期望值完全形成电子密度的泛函，使得电子结构处理变得非常简单。
+
+		当时其精度有限，因为动能项通过简单的近似得到，而且没有考虑交换和关联对总能量的贡献。
+	\item[Hohenberg-Kohn 定理]
+	\begin{itemize}
+		\item 所有客观测量的期望值原则上都是基态电子密度的泛函。
+
+		电子密度分布$\rho(r)$决定了总电子数$N$，从而哈密顿量$H=T_e+U_{ee}+V_{ext}$总只有最后一项可能是不确定的。如果$\rho(r)$是两个不同哈密顿量$H$和$H'$的基态电子密度，而两者的基态波函数分别为$\ket{\Psi}$和$\ket{\Psi'}$，基态能量分别为$E_0$和$E'_0$,基态在不兼并的情况下有
+		\begin{equation}
+		\begin{cases}
+		E_0&=\bracketl{\Psi}{H}{\Psi}\\
+		&<\bracketl{\Psi'}{H}{\Psi'}\\
+		&=\bracketl{\Psi'}{H'}{\Psi'}+\bracketl{\Psi'}{(H-H')}{\Psi'}\\
+		&=E_0'+\int \rho(r)(V_{ext}-V'_{ext})\,dr\\
+		E_0'&=\bracketl{\Psi'}{H'}{\Psi'}\\&
+		<\bracketl{\Psi}{H'}{\Psi}\\
+		&=\bracketl{\Psi}{H}{\Psi}+\bracketl{\Psi}{(H'-H)}{\Psi}\\
+		&=E_0-\int \rho(r)(V_{ext}-V'_{ext})\,dr\\
+		\end{cases}
+		\end{equation}
+		Then
+		\begin{equation}
+		E_0+E'_0<E_0+E_0'
+		\end{equation}
+		矛盾，故电子密度与唯一的哈密顿量对应。反过来，哈密顿量有唯一的基态电子密度。\footnote{在这里，需要指出的是此定理在基态不兼并的情况下成立。}因此，所有可观测量的期望值都是基态电子密度的泛函，特别地，基态总能量是电子密度的泛函：
+		\begin{equation}
+		E[\rho]=T_e[\rho]+V_{ext}[\rho]+U_{ee}[\rho]
+		\end{equation}
+
+		\item 基态电子密度原则上可以通过变分法严格得到。
+
+	\end{itemize}
+
+	\item[Kohn-Sham密度泛函理论]
+	哈密顿量中的动能项难以用密度泛函直接表达，而波函数可以更容易地计算动能，为此1965年Kohn和Sham提出了融合波函数和密度的现代DFT理论，使密度泛函理论成为实际可行的理论方法。
+
+	\begin{itemize}
+		\item 动能 
+		\begin{equation}
+		T_0[\rho]=\sum_i\bracketl{\phi_i}{-\frac{1}{2}\grad^2}{\phi_i}
+		\end{equation}
+
+		\item 库伦势
+		\begin{equation}
+		U_{cl}[\rho]=\frac{1}{2}\iint\frac{\rho(r')\rho(r)}{|r'-r|}\,drdr'
+		\end{equation}
+	\end{itemize}
+
+\end{description}
+
+\begin{align*}
+&H\ket{\phi_i}=E_i\ket{\phi_i}\\
+&\ket{\phi(t=0)}\sum_ic_i(0)\ket{\phi_i}\\
+\Rightarrow & \frac{\partial \ket{\phi(t)}}{\partial t}=\frac{1}{i\hbar}H\ket{\phi(t)}\\
+\Rightarrow & c_i\ket{\phi_i}=\frac{1}{i\hbar}\sum_i\bracket{H}{\phi_i}\\
+\Rightarrow & \bracketl{\phi_j}{\sum_ic_i}{\phi_i}=\frac{1}{i\hbar}\sum_ic_iE_i\bracket{\phi_j}{\phi_i}\\
+\Rightarrow & c_j^*=\frac{1}{i\hbar}c_jE_j\\
+\Rightarrow & c_j(t)=c_j(0)e^{\frac{e_j}{i\hbar}t}\\
+\Rightarrow & \ket{\phi(t)}=\sum_ic_j\ket{\phi_j}
+\end{align*}
+
+\begin{description}
+	\item[HK定理] 体系的基态电子密度与外势一一对应；
+	\item[RG定理] 但体系的初态确定时，任何时刻电子密度都与外势一一对应；
+	\begin{description}
+	\item[正定理] 哈密顿量
+	\begin{equation}
+	H(r,t)=T_{e}(r)+U_{ee}(r)+V_{ext}(r,t)
+	\end{equation} 
+	其中，动能项 $T_e=-\sum\frac{\grad^2_i}{2}$,电子相互作用项 $U_{ee}=\frac{1}{2}\sum_{i\neq j}\frac{1}{r_i-r_j}$
+	当外势项$V_{ext}(r,t)=\sum_iv(r,t)$已知时，含时哈密顿量确定。
+	
+	\item[外势有唯一的含时电子密度与之对应]
+	薛定谔方程 $i\frac{\partial}{\partial t}\ket{\psi(r,t)}=H(r,t)$
+
+	\item[逆定理] 假设
+
+	\item[电流密度] 
+	\begin{equation}
+	j(r)=\frac{1}{2i}\sum_{i=1}^{N}[\grad_i\delta(r-r_i)+\delta(r-r_i)\grad_i]\quad f(r,t)=\bracketl{\psi(t)}{j(r)}{\psi(t)}\end{equation}
+
+
+	 \item[海森堡方程]
+	 \begin{equation}
+	 \frac{\partial}{\partial t}j(r,t)=-i\bracketl{\psi(r,t)}{[j(r)H(r,t)]}{\psi(r,t)}
+	 \end{equation}
+
+
+	\end{description}
+
+	分子存在振动能级，其能级差正好落于红外光波段。外界电磁波对体系的影响可通过哈密顿量的一阶微扰进行处理:
+\begin{equation}
+\hat{H}=\hat{H}_0 + \hat{W}
+\label{pertubation}
+\end{equation}
+$\ket{\phi_n}$定义为基态哈密顿量,即$\hat{H}_0$的特征向量。由于$\hat{H}_0$是一个可观测量，其特征向量能够形成完备基组，故针对\ref{pertubation}的特征向量$\ket{\psi(t)}$可进行线性展开:
+\begin{equation}
+\psi(t)=\sum_nc_n(t)\,\mathrm{exp}(-\frac{i}{\hbar}E_nt)\,\ket{\phi_n}
+\label{linearexpansion}
+\end{equation}
+其中$E_n$为$\ket{\phi_n}$对应的特征根。并且拥有初始条件
+\begin{equation}
+c_n(t=0)=\delta_{n,i}
+\end{equation}
+其中，$i$表示$t=0$状态下体系所处的状态。当体系经过$t$时间后，体系被观测为处于$f$的状态的概率为
+\begin{equation}
+w_{i\rightarrow f}(t)=|c_f(t)|^2
+\end{equation}
+为计算$c_n$对\ref{linearexpansion}式对时间进行求导,并结合\sch's equation,得到
+\begin{equation}
+i\hbar\sum_n(\frac{dc_n}{dt}-\frac{i}{\hbar}E_nc_n)\,\mathrm{exp}(-\frac{i}{\hbar}E_nt)\ket{\phi_n}=\sum_nc_n\mathrm{exp}(-\frac{i}{\hbar}E_nt)(E_n+\hat{W})\ket{\phi_n}
+\end{equation}
+化简并左乘$\bra{\phi_m}$，得到
+\begin{equation}
+i\hbar\frac{dc_m}{dt}=\sum_nW_{mn}c_n\,\mathrm{exp}[\frac{i}{\hbar}(E_m-E_n)t]
+\end{equation}
+并定义
+\begin{equation}
+W_{mn}=\bracketl{\phi_m}{\hat{W}}{\phi_n}
+\end{equation}
+对公式进行积分，可得到
+\begin{equation}
+c_m(t)=c_m(0)+\frac{1}{i\hbar}\int^t_0dt'\sum_nW_{mn}\,\mathrm{exp}[\frac{i}{\hbar}(E_m-E_n)t']c_n(t')
+\end{equation}
+针对微扰的一阶项,$c_m(t)$由下式给出：
+\begin{equation}
+c_m(t)=c_m(0)+\frac{1}{i\hbar}\int^t_0dt'\sum_nW_{mn}\,\mathrm{exp}[\frac{i}{\hbar}(E_m-E_n)t']c_n(0)
+\end{equation}
+代入状态$i$及$f$的初始条件，得到
+\begin{equation}
+c_f(t)=\frac{1}{i\hbar}\int^t_0dt'W_{fi}\,\mathrm{exp}[\frac{i}{\hbar}(E_f-E_i)t']
+\end{equation}
+并假设$W_{fi}$并不随时间发生改变，从而直接积分得到
+\begin{equation}
+|c_f(t)|^2=w_{i\rightarrow f}(t)=|W_{fi}|^2\frac{\mathrm{sin}^2[(E_f-E_i)t/(2\hbar)]}{[(E_f-E_i)/2]^2}
+\end{equation}
+若对一个较大的$t$,有
+\begin{equation}
+w_{i\rightarrow f}(t)\approx |W_{fi}|^2\frac{2\pi}{\hbar}t\delta(E_f-E_i)
+\end{equation}
+即每一个元时间发生跃迁的概率为
+\begin{equation}
+P_{i\rightarrow f}=\frac{1}{t}w_{i\rightarrow f}(t) = \frac{2\pi}{\hbar}|W_{fi}|^2\delta(E_f-E_i)
+\end{equation}
+从而推导得到Fermi's Golden Rule.
+\begin{equation}
+P_{i\rightarrow f}=\frac{2\pi}{\hbar}|\bracketl{\phi_f}{\hat{W}}{\phi_i}|^2\rho(E_f=E_i)
+\end{equation}
+其中$\rho(E_f=E_i)$表达了其态密度。
+
+在偶极近似中，与电磁波的作用可表示为
+\begin{equation}
+\hat{V}(t)=\hat{V}_{el}(t)+\hat{V}_{mag}(t)
+\begin{cases}
+\hat{V}_{el}(t)=-\overrightarrow{\mu}_{el}\cdot \overrightarrow{E}\\
+\hat{V}_{mag}(t)=-\overrightarrow{\mu}_{mag}\cdot \overrightarrow{E}\\
+\end{cases}
+\end{equation}
+在低磁场环境下电场相互作用占主导，从而推导得到吸收峰
+\begin{equation}
+G_{fi}=\frac{8\pi^3h}{3h^2(4\pi\varepsilon_0)c}|\bracketl{f}{\overrightarrow{\mu}}{i}|^2
+\end{equation}
+从而可得到$G_{fi}$与偶极矩大小成正相关，若一个键的振动带来大的偶极矩变化，其吸收峰会较大；而若不产生偶极矩，则$|\bracketl{f}{\overrightarrow{\mu}}{i}|$一项为零，故不发生吸收。
+\end{description}   
+
+
+
+

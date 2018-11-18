@@ -1,0 +1,107 @@
+\chapter{文献摘要}
+\section{\emph{On the Quantum Correction For Thermodynamics} by E. Wigner}
+\begin{enumerate}
+	\item The mean value of any physcial quantity is, (apart from a normalizing constant depending only on temperature), the sum of the diagonal elements of the matrix
+	\begin{equation}
+	Qe^{-\beta H}
+	\end{equation}
+	where $Q$ is the matrix(operator) of the quantity under consideration and $H$ is the Hamiltonian of the system.
+
+	\item If a wave function $\psi(x_1 \cdot \cdot \cdot x_n)$ is given one may build the following expression
+	\begin{equation}
+	P(x_i;p_i)=\left(\frac{1}{h\pi}\right)^n\int_{-\infty}^\infty dy_i\, \psi(x_i+y_i)^*\psi(x_i-y_i)e^{2i\sum p_iy_i/h}
+	\label{Pdef}
+	\end{equation}
+	and call it the probability-function of the simultaneous values of $x_1 \cdot \cdot \cdot x_n$ for the coordinates and $p_i$ for the momenta.\footnote{在整篇文章用$h$来代表约化普朗克常数，即$\hbar$.}
+
+	\item 上式恒为实数但不恒为正数。当对$p$进行积分时能够给出一般熟知的实空间下的概率分布函数，即$|\psi(x_i)|^2$，对$x_i$积分可得到关于$p_i$的概率分布函数
+	\begin{equation}
+	\left|\int dx_i e^{i\sum_l{p_lx_l}/h} \right| ^2
+	\end{equation}
+ 	分别由Fourier Integral 和$u_i = x_i + y_i,v_i=x_i-y_i$进行坐标变换得到。
+
+ 	\item 有
+ 	\begin{equation}
+ 	\int dx_i \int d p_i [f(p_i) + g(x_i)]P(x_i;p_i)=\int dx_i\psi(x_i)^*[f\left(-ih\frac{\partial}{\partial x_i}\right)+g(x_i)]\psi(x_i)
+ 	\end{equation}
+
+ 	或使用Dirac记号，
+ 	\begin{equation}
+ 	\bracketl{x'p'}{(f(p_i)+g(x_i))P}{x'p'}=\bracketl{\psi}{f\left(-ih\frac{\partial}{\partial x_i}\right)+g(x_i)}{\psi}_{x'}
+ 	\end{equation}
+
+ 	简而言之，相空间下的动量、坐标算符的线性组合可直接等效于\sch's representation下的算符写法，而只需要对$p$进行变换。用$\langle \rangle_{x'}$表示\sch's representation.
+
+ 	\item 根据\sch's equation,
+ 	\begin{equation}
+ 	(-\sum_i p_i^2/2m + V(x_i))\ket{\psi}_{x',t'}=ih\frac{\partial}{\partial t}\ket{\psi}_{x',t'}
+ 	\end{equation}
+
+ 	the change of $P(x_i;p_i)$ is given by
+ 	\begin{equation}
+ 	\frac{\partial P}{\partial t}= - \sum \frac{p_i}{m_i}\frac{\partial P}{\partial x_i} + \sum \frac{\partial^{\sum \lambda_i}V}{\Pi \partial x_i^{\lambda_i}}\frac{-(ih/2)^{(\sum \lambda_i)-\lambda_n}}{\Pi \lambda_i!}\sum \frac{\partial^{\sum \lambda_i}P}{\Pi \partial p_i^{\lambda_i}}
+ 	\label{Pdifferential}
+ 	\end{equation}
+ 	where the last summation has to be extended over all positive integer values of $\lambda_i$ for which the sum $\sum_{i=1}^{n} \lambda_i$ is odd.\footnote{突然意识到下标的$i$与虚数$i$冲突……嘛谅解谅解。}
+
+ 	\item 利用(\ref{Pdef})及\sch's equation,
+ 	\begin{align*}
+ 	\frac{\partial P}{\partial t}& = \frac{1}{h\pi^n}\int dy_i e^{2i\sum p_iy_i/h}\\
+ 	&\cdot\{\sum_k \frac{ih}{2m_k}\left[-\frac{\partial^2\psi(x_i+y_i)^*}{\partial x_k^2}\psi(x_i-y_i)+\psi(x_i+y_i)\frac{\partial^2\psi(x_i-y_i)}{\partial x_k^2}\right]\\
+ 	&+\frac{i}{h}[V(x_i+y_i)-V(x_i-y_i)]\psi(x_i+y_i)^*\psi(x_i-y_i)\}
+ 	\end{align*}
+ 	Here one can replace the differentiations with respect to $x_k$ by differentiations with respect to $y_k$ and perform in the first two terms one partial integration with respect to $y_k$. In the last term we can develop $V(x_i+y_i)$ in a Taylor series with respect to the $y$ and get 
+ 	\begin{align*}
+ 	\frac{\partial P}{\partial t}& = \frac{1}{h\pi^n}\int dy_i e^{2i\sum p_iy_i/h}\\
+ 	&\cdot\{\sum_k \frac{p_k}{m_k}\left[-\frac{\partial\psi(x_i+y_i)^*}{\partial y_k}\psi(x_i-y_i)+\psi(x_i+y_i)\frac{\partial\psi(x_i-y_i)}{\partial y_k}\right]\\
+ 	&+\frac{i}{h}\sum_\lambda\frac{\partial^{\sum\lambda_l}V}{\prod x_l^{\lambda_l}}\frac{\prod y_l^{\lambda_l}}{\prod \lambda_l!}\psi(x_i+y_i)^*\psi(x_i-y_i)\}
+ 	\end{align*}
+ 	which is identical with (\ref{Pdifferential}) if one replaces now the differentiations with respect to $y_k$ by differentiations with respect to $x_k$. Of course, it is legitimate only if it is possible to develop the potential energy $V$ in a Taylor series.
+
+ 	It also shows the close analogy between the probability function of the classical mechanics and our P, indeed the equation of continuity
+ 	\begin{equation}
+ 	\frac{\partial P}{\partial t}= -\sum_k \frac{p_k}{m_k}\frac{\partial P}{\partial x_k} + \sum_k \frac{\partial V}{\partial x_k}\frac{\partial P}{\partial p_k}
+ 	\end{equation}
+ 	differs from (\ref{Pdifferential}) only in terms of at least the second power of $h$ and at least the third derivative of $V$. Expression (\ref{Pdifferential}) is even identical with the classical when $V$ has no third and higher derivatives as, e.g., in a system of oscillators.
+
+ 	\item Alternative form for $\partial P/ \partial t$\footnote{然而在原文中多重积分里的P是用$P(x_l;P_l+j_l)$来描述，这显得有些奇怪——至少量纲会崩盘。}:
+ 	\begin{equation}
+ 	\frac{\partial P}{\partial t}= - \sum_k \frac{p_k}{m_k}\frac{\partial P}{\partial x_k}+\int dj_l P(x_l;p_l+j_l)J(x_l;j_l)
+ 	\end{equation}
+ 	wherer $J(x_l;j_l)$ can be interpreted as the probability of a jump in the momenta with the amounts $j_l$ for the configuration $x_l$. The probability of this jump is given by
+ 	\begin{equation}
+ 	J(x_l;j_l)=\frac{i}{\pi^nh^{n+1}}\int dy_l [V(x_l+y_l)-V(x_l-y_l)]e^{-2i\sum y_l j_l/h}
+ 	\end{equation}
+ 	that is, by the Fourier expansion coefficients of the potential $V(x_l)$. This form clearly shows the quantum mechanical nature of our $P$: the momenta change discontinuously by amounts which would be half the momenta of light quanta if the potential were composed of light.
+
+ 	\item 若多个态线性组合，For a system in statistical equilibrium at the temperature $T=1/k\beta$ the relative probability of a statonary state $\psi_\lambda$ is $e^{-\beta E_\lambda}$ where $E_\lambda$ is the energy of $\psi_\lambda$. Therefore the probability function is a part from a constant
+ 	\begin{equation}
+ 	P=\sum_\lambda \int dy_k \psi_\lambda \psi(x_k+y_k)^* e^{-\beta E_\lambda} \psi(x_k-y_k) e^{2i\sum p_ky_k/h}
+ 	\end{equation}
+
+ 	Now
+ 	\begin{equation}
+ 	\sum_\lambda \bracketl{_{u_i}\psi_\lambda}{f(H_\lambda)}{\psi_\lambda}_{v_i}
+ 	\end{equation}
+ 	represents the operator $f(H)$, Thus\footnote{也就是将波函数整合进$e^{-\beta H}$，然后左右拆分为关于$x_k-y_k$,$x_k+y_k$两项。}
+ 	\begin{equation}
+ 	P=\int dy_k e^{i\sum(x_k+y_k)p_k/h}[e^{-\beta H}]_{x_k+y_k;x_k-y_k}e^{-i\sum(x_k-y_k)p_k/h}
+ 	\end{equation}
+\end{enumerate}
+
+
+\section{\emph{Quantum Mechanics as a statistical theory} by J. E. Moyal}
+\begin{enumerate}
+	\item We denote by $\mathbf{r}$ a set of commuting observables or operators giving a complete representation, $\mathbf{s}$ the \emph{complementary} set, such that $\mathbf{s}$ do not commute with $\mathbf{r}$ and that $\mathbf{r}$ and $\mathbf{s}$ together form a \emph{basic set of dynamical variables}, characterizing a given system, and $r$ and $s$ are their eigenvalues.
+
+	\item The most natural way of obtaining the phase-space distribution $F(r,s)$ is to look for its Fourier inverse, i.e. the mean of $\exp{\{i(\tau r + \theta s)\}}$ ($\rightarrow$ characteristic function)
+	
+	\item Characteristic function of $\mathbf{r}$ and $\mathbf{s}$
+	\begin{equation}
+	\mathbf { M } _ { ( \tau , \theta ) } = \exp \{ i ( \tau \mathbf { r } + \theta \mathbf { s } ) \} = \sum _ { n } \frac { i ^ { n } } { n ! } ( \tau \mathbf { r } + \theta \mathbf { s } ) ^ { n }
+	\end{equation}
+
+	the characteristic function in a state $\psi$ is given by the scalar product
+	\begin{equation}
+	M ( \tau , \theta ) = \left( \psi , e ^ { i ( \tau \mathbf{r} + \theta \mathbf{s} ) } \psi \right)
+	\end{equation}

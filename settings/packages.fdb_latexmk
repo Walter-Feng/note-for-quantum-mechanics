@@ -1,0 +1,14 @@
+# Fdb version 3
+["xdvipdfmx"] 0 "packages.xdv" "packages.pdf" "packages" 0
+  "packages.xdv" 0 -1 0 "xelatex"
+  (generated)
+  "packages.pdf"
+["xelatex"] 1521590964 "packages.tex" "packages.xdv" "packages" 1521590964
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1491389445 32192 c18bc721db8195c55b3f5b993e802bbf ""
+  "/usr/local/texlive/2016/texmf-var/web2c/xetex/xelatex.fmt" 1492672231 3746849 0b491056ceb54f69e6ea9ccec3cead46 ""
+  "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "packages.aux" 1520471777 8 a94a2480d3289e625eea47cd1b285758 ""
+  "packages.tex" 1521008660 2164 0242b9a43860ae01b11854a901c908f7 ""
+  (generated)
+  "packages.log"
+  "packages.xdv"

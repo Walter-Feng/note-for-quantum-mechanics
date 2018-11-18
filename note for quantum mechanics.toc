@@ -1,0 +1,41 @@
+\contentsline {chapter}{\numberline {1}\emph {The Principles of Quantum Mechanics} by Dirac.}{1}
+\contentsline {section}{\numberline {1.1}Superposition and Indeterminacy}{1}
+\contentsline {subsection}{\numberline {1.1.1}Notes}{1}
+\contentsline {section}{\numberline {1.2}Dynamical Variables and Observables}{1}
+\contentsline {subsection}{\numberline {1.2.1}Definitions}{1}
+\contentsline {subsection}{\numberline {1.2.2}Notes}{2}
+\contentsline {subsection}{\numberline {1.2.3}Theorems and Proofs}{2}
+\contentsline {subsection}{\numberline {1.2.4}Digests}{7}
+\contentsline {section}{\numberline {1.3}Representations}{8}
+\contentsline {subsection}{\numberline {1.3.1}Definitions}{8}
+\contentsline {subsection}{\numberline {1.3.2}Notes}{9}
+\contentsline {subsection}{\numberline {1.3.3}Theorems and Proofs}{11}
+\contentsline {subsection}{\numberline {1.3.4}Digests}{13}
+\contentsline {section}{\numberline {1.4}The Quantum Conditions}{18}
+\contentsline {subsection}{\numberline {1.4.1}Notes}{18}
+\contentsline {section}{\numberline {1.5}The Equations of Motion}{22}
+\contentsline {subsection}{\numberline {1.5.1}Definitions}{22}
+\contentsline {subsection}{\numberline {1.5.2}Notes}{23}
+\contentsline {subsection}{\numberline {1.5.3}Digests}{24}
+\contentsline {section}{\numberline {1.6}Elementary Applications}{26}
+\contentsline {subsection}{\numberline {1.6.1}digests}{26}
+\contentsline {chapter}{\numberline {2}\emph {Introduction to Quantum Mechanics} by David J. Griffiths}{28}
+\contentsline {section}{\numberline {2.1}Fundamental Equations}{28}
+\contentsline {section}{\numberline {2.2}Fundamental Constants}{29}
+\contentsline {chapter}{\numberline {3}高等物理化学——量子化学课程笔记}{30}
+\contentsline {section}{\numberline {3.1}Linux 具体操作}{30}
+\contentsline {section}{\numberline {3.2}调教 Gaussian 步骤}{30}
+\contentsline {section}{\numberline {3.3}理论课笔记}{31}
+\contentsline {subsection}{\numberline {3.3.1}量子的化学}{31}
+\contentsline {subsection}{\numberline {3.3.2}量子与经典}{31}
+\contentsline {subsection}{\numberline {3.3.3}量子精确解}{33}
+\contentsline {section}{\numberline {3.4}量子近似解}{34}
+\contentsline {section}{\numberline {3.5}组会笔记}{44}
+\contentsline {chapter}{\numberline {4}文献摘要}{47}
+\contentsline {section}{\numberline {4.1}\emph {On the Quantum Correction For Thermodynamics} by E. Wigner}{47}
+\contentsline {chapter}{\numberline {5}\emph {非绝热动力学中的量子力学效应研究 by 沈一帆}}{50}
+\contentsline {section}{\numberline {5.1}绪论摘要}{50}
+\contentsline {section}{\numberline {5.2}正文摘要}{51}
+\contentsline {subsection}{\numberline {5.2.1}相空间Ehrenfest定理}{51}
+\contentsline {subsection}{\numberline {5.2.2}相空间分布函数}{52}
+\contentsline {section}{\numberline {5.3}自己研究出的一些垃圾}{53}

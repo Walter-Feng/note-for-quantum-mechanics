@@ -1,0 +1,131 @@
+\section{组会笔记}
+\begin{description}
+	\item[离散空间连续化]
+		可以理解为给一大堆的$\delta$函数赋予一定的宽度，或者将一堆离散的点进行拟合；
+
+	\item[连续空间离散化]将函数用许多高斯函数进行分离，然后将高斯函数转化为$\delta$函数；
+
+	\item[Charging Patching Method] 假设一些部分体系之间的相互作用是有限的，从而能够将一些大体系划分为几个小体系计算电子密度（个人猜测其内涵）
+
+	\begin{quote}
+	It is assumed that the charge density at a given point depends only on the local atomic environment around the point. As a relsult, charging density motifs for all the atoms can be calculated from prototype system, and can then be used to reassemble the charge density of a large system.
+	\end{quote}
+
+	\begin{equation}
+	m_{l_\alpha} (\textbf{r}-\textbf{R}_\alpha) = \rho_{LDA}(\textbf{r}) \frac{w_\alpha(|\textbf{r}-\textbf{R}_\alpha|)}{\sum_{\textbf{R}_{\alpha'}}w_{\alpha'}(|\textbf{r}-\textbf{R}_{\alpha'}|)}
+	\end{equation}
+
+	\footnotesize
+
+	$R_\alpha$: an atomic site of atom typed $\alpha$
+
+	$m_{l_\alpha}(\textbf{r}-\textbf{R}_\alpha)$: charge-density motif belonging to this atomic site;
+
+	$\rho_{LDA}(\textbf{r})$: the self-consistently calculated charge density of a prototype system
+
+	$w_\alpha(\textbf{r})$: exponential decay function
+
+	\normalsize
+
+	\begin{equation}
+	\rho_{\text{patch}}(\textbf{r})=\sum_{\textbf{R}_\alpha} m_{l_\alpha}(\textbf{r}-\textbf{R}_\alpha)
+	\end{equation}
+
+	\item[min-cost problem] 
+
+	\begin{quote}
+	Minimum-cost flow problem, is an optimization and decision problem to find the cheapest possible way of sending a certain amount of flow through a flow network. A typical application of this problem involves finding the best delivery route from a factory to a warehouse where the road network has some capacity and cost associated.
+
+	The minimum cost flow problem is one of the most fundamental among all flow and circulation problems because most other such problems can be cast as a minimum cost flow problem and also that it can be solved very efficiently using the network simplex algorithm.
+	\end{quote}
+
+	\begin{quote}
+	A flow network is a directed graph $G=(V,E)$ with a source vertex $s \in V$ and a sink vertex $t \in V$, where each edge $(u,v)\in E$ has capacity $c(u,v) > 0$, flow $f(u,v) \geq 0$ and cost $a(u,v)$, with most minimum-cost flow algorithms supporting edges with negative costs. The cost of sending this flow along an edge $(u,v)$ is $f(u,v) \cdot a(u,v)$. The problem requires an ammount of flow $d$ to be sent from source $s$ to sink $t$.
+
+	The definition of the problem is to minimize the \textbf{total cost} of the flow over all edges:
+
+	\begin{equation}
+	\sum_{(u,v)\in E} a(u,v) \cdot f(u,v)
+	\end{equation}
+	with the constraints
+	\begin{align*}
+	\text{\textbf{Capacity constraints:}} & f(u,v)\geq c(u,v) \\
+	\text{\textbf{Skew symmetry:}} & f(u,v)=-f(v,u)\\
+	\text{\textbf{Flow conservation:}} & \sum_{w\in V}f(u,w)=0 \,\text{for all} \, u \neq s,t\\
+	\text{\textbf{Required flow:}} & \sum_{w\in V} f(s,w) = d \,\text{and} \,\sum_{w\in V} f(w,t) =d 
+	\end{align*}
+	\end{quote}
+	\item[Network simplex algorithm]
+	
+	\begin{quote}
+	In mathematical optimization, the network simplex algorithm is a graph theorestic specialization of the simplex algorithm.
+
+	The algorithm is usually formulated in terms of a standard problem, minimum-cost flow problem and can be efficiently solved in polynomial time.
+	\end{quote}
+
+	\item[FSSH 方法] 简单高效的处理核-电子耦合非绝热动力学模型，有如下缺点：
+
+	\begin{itemize}
+	\item 轨迹之间独立，天生不存在decoherence效应，需要额外算法
+	\item 每个轨迹演化过程需满足能量守恒，速度校正能量不够时，就会出现frustrated hopping
+	\end{itemize}
+
+	\item[SCH（Consensus Surface Hopping）] 利用多轨迹系综模拟体系的密度矩阵的演化，每个轨迹的跃迁由体系的密度矩阵来决定。
+	\begin{itemize}
+	\item 每个轨迹不需保证能量守恒，跃迁前后速度矫正被舍弃；
+	\item 轨道势能面跃迁前后不校正栋梁，理由：
+	\begin{itemize}
+		\item 集体代表密度演化的轨迹不需要各自满足能量守恒
+		\item 速度校正违背了耦合刘维尔方程的局域性质；跃迁前后不应改变核的相空间的位置。
+	\end{itemize}
+	\item 不额外加入decoherence 算法，能够包括退相干效应；
+	\item 判断是否跃迁时，比较的是$\Delta \sigma_k$和随机数$\eta$
+	\end{itemize}
+
+	
+	\item[量子刘维尔定理] 
+	\begin{equation}
+	i\hbar \frac{\partial \rho}{\partial t} = [\textbf{H},\rho]
+	\end{equation}
+
+	\begin{align*}
+	\frac{\partial \rho}{\partial t}&=\partial_t \ket{\psi}\bra{\psi}\\
+	&= \partial_t \ket{\psi} \bra{\psi} + \ket{\psi}\partial_t\bra{\psi}\\
+	i\hbar\partial_t(\ket{\psi}\bra{\psi}) &= \textbf{H}\ket{\psi}\bra{\psi}\\
+	\end{align*}
+
+	\begin{equation}
+	\rho=\ket{\psi}\bra{\psi}=\sum_{i,j}c_i\ket{\psi_i}c_j^*\bra{\psi_j}=\sum_{i,j}c_{ij}\ket{\psi_i}\bra{\psi_j}
+	\end{equation}
+
+	\begin{equation}
+	\frac{1}{i\hbar}[\textbf{H},\rho]=\{\{\textbf{H},\rho\}\}=\{\textbf{H},\rho\}+O(\hbar^2)
+	\end{equation}
+
+	\item[Charge transfer mechanism]
+	\begin{itemize}
+		\item The competition between coherent tunneling and incoherent hopping
+		\item For small V, the population tends to localize to form polarons, and incoherent hopping dominates the transfer processes.
+		\item For large V, the population tends to be delocalized for a few hundred femtoseconds and coherent tunneling dominates transfer processes through delocalized states.
+		\item The effect of coherent tunneling becomes weaker along a linear chain because of the uphill site energies and localization.
+		\item With increasing site numbers, a hange of the charge transfer mechanism from tunneling to hopping occurs, and this process is strongly dependent on the tunneling parameter V.
+	\end{itemize}
+
+	Charge separation in photo voltaic systems:
+
+	Exciton dissociation occurs within a few hundred femtoseconds when the delocalized states are first reached. After that, polaron formation can localize the electronic states; holes and electrons will move via incoherent hopping within these localized states. The transfer mechanism of this separation from tunneling to hopping.
+
+	\item [最少面间跳跃] John Tully的最少面间跳跃，面间跳跃的轨迹平均是把每条轨迹铵概率而非概率幅叠加。
+	\begin{itemize}
+		\item 电子必须用量子力学描述
+
+		\item 原子核质量比电子大得多，往往可近似认为服从经典力学
+
+		\item 经典的原子核在与量子的电子构成的势能面间跳跃
+
+		\item 非绝热过程中原子核的量子力学效应事实上较为明显
+	\end{itemize}
+
+
+	
+\end{description}
