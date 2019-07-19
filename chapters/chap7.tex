@@ -1,0 +1,81 @@
+\chapter{Gaussian Integrals}
+
+All the knowledge here can be found in the article \emph{S. Obara and A. Saika, Efficient recursive computation of molecular integrals over Cartesian Gaussian functions, Journal of Chemical Physics 84(7),3963-3974 (1986)}. This chapter is a digest from \emph{Density Fitting in Explicitly Correlated Electronic Structure Theory} by \emph{Andrew James May}.
+
+In the whole chapter the state is described as a gaussian function, and it is marked like this:
+\begin{equation} 
+	|a ) = g(\boldsymbol{r}, \alpha, \boldsymbol{a} ,\boldsymbol{A} ) = (x-A_x)^{a_x} (y-A_y)^{a_y} (z-A_z)^{a_z} \exp \left\{ - \alpha | \boldsymbol{r} - \boldsymbol{A} |^2  \right\}. 
+\end{equation}  
+But here a simple $| a \rangle $ is denoted. the  $\boldsymbol{a}$ represents the angular momentum exponents,
+\[
+	\boldsymbol{a} = (a_x,a_y,a_z)
+.\] 
+
+\begin{theorem}
+	The product of two Gaussian functions,
+	\[
+		g_1 g_2 = g(\boldsymbol{r},\alpha, \boldsymbol{a},\boldsymbol{A}) g(\boldsymbol{r},\beta, \boldsymbol{b}, \boldsymbol{B})
+	.\] 
+	can be represented exactly as a small expansion in single Gaussian functions.
+\end{theorem}
+The simplest case of two Gaussian functions with zero angular momentum is expressed as 
+	\[
+		g(\boldsymbol{r},\alpha,\boldsymbol{0},\boldsymbol{A}) g(\boldsymbol{r},\beta, \boldsymbol{0}, \boldsymbol{B} ) = \exp\left\{ -\alpha | \boldsymbol{r}-\boldsymbol{A} | ^2 \right\} \exp \left\{ - \beta |\boldsymbol{r}- \boldsymbol{B}| ^2 \right\} 
+	.\] 
+	which can be algebraically rearranged to give
+	\begin{align*}
+		g(\boldsymbol{r},\alpha,\boldsymbol{0}, \boldsymbol{A}) g(\boldsymbol{r},\beta, \boldsymbol{0}, \boldsymbol{B}) &= \exp \left\{ - \xi |\bar{AB} |^2\right\}  \exp \left\{ - \zeta |\boldsymbol{r}-\boldsymbol{P}| ^2 \right\} \\
+																&= exp \left\{ - \xi |\bar{AB}|^2 \right\} g(\boldsymbol{r},\zeta, \boldsymbol{0}, \boldsymbol{P})
+	\end{align*}
+	where
+	\[
+		\zeta = \alpha+ \beta, \xi = \frac{\alpha \beta}{\zeta}, \boldsymbol{P} = \frac{\alpha \boldsymbol{A} + \beta \boldsymbol{B}}{\zeta}, 
+	.\] 
+For a more general case,
+\begin{align*}
+	g_1 g_2 & = \exp \left( -\xi |\bar{AB} |^2  \right) \exp \left( -\zeta |\boldsymbol{r} - \boldsymbol{P} | ^2 \right) \times \\
+		& \prod_{k=x,y,z}\left[ \sum_{i=0}^{a_k + b_k} (x-P_x)^i f_i(a_k, b_k, \boldsymbol{PA}_k,\boldsymbol{PB}_k)\right] 
+\end{align*}
+When applied to integrals the GPT can be used to reduce a four-index integral to a sum of three-index integrals
+\[
+	\langle ab | r_{12}^{-1} | cd \rangle = T_p^{ab} \langle p | r_{12}^{-1} | cd \rangle 
+.\] 
+where $p$ follows the Einstein summation convention, and
+ \[
+	 T_p^{ab} = \prod_{k=x,y,z} f_{p_k} (a_k,b_k,\boldsymbol{PA}_k, \boldsymbol{PA}_k) \exp \left\{ - \xi |\bar{AB}|^2 \right\} 
+.\] 
+and GPT being used once again,
+\[
+	\langle ab | r_{12}^{-1} | cd \rangle = T_p^{ab} t_q^{cd} \langle p | r_{12}^{-1} | q \rangle  
+.\] 
+
+
+Integrals of the form
+\[
+	\int ^\infty _{-\infty} dx (x-P_x)^i \exp \left\{ - \zeta (x-P_x)^2 \right\}  \, \mathrm{d}x = \int ^\infty_{-\infty} du u^i \exp \left\{ - \zeta u^2 \right\} \, \mathrm{d} u 
+.\] 
+and 
+\[
+	\int ^\infty_{-\infty}  u^i \exp \left\{ -\zeta u^2 \right\} \, \mathrm{d}u = \frac{(i-1)!!}{2\zeta^{\frac{i}{2}} \left( \frac{\pi}{\zeta} \right) ^{\frac{1}{2}} 
+.\] 
+if $i$ is even and zero otherwise. 
+
+Now all \hat{t} is needed is to evaluate
+\[
+\frac{1}{2\alpha} \frac{\partial }{\partial A_i}  \langle \boldsymbol{a} | \boldsymbol{b} \rangle 
+.\] 
+then
+\[
+	\frac{\partial }{\partial A_i} f_k (a_i,b_i,\boldsymbol{PA}_i, \boldsymbol{PB}_i) = - \frac{\beta}{\alpha+\beta} a_i f_k (a_i-1,b_i,\boldsymbol{PA}_i,\boldsymbol{PB}_i) - \frac{\alpha}{\alpha + \beta} b_i f_k (a_i, b_i -1 , \boldsymbol{PA}_i,\boldsymbol{PB}_i)
+.\] 
+The recurrence relation for increasing angular momentum for $| a \rangle $ is as
+\[
+	\langle a+1_i | b \rangle = (P_i - A_i) \langle a | b \rangle + \frac{a_i}{2 \zeta} \langle a- 1_i | b \rangle + \frac{b_i}{2\zeta} \langle a | b-1_i \rangle 
+.\] 
+where $1_i$ represents  $\delta_{ik}$, with $k$ being the flexible index.
+
+The Coulomb integrals are defined as
+\[
+	\langle a | \frac{1}{r_{12}} | b \rangle = \int \int g(\boldsymbol{r}_1,\alpha,\boldsymbol{a},\boldsymbol{A}) \frac{1}{r_{12}} g(\boldsymbol{r}_2,\beta, \boldsymbol{b},\boldsymbol{B}) \, \mathrm{d}\boldsymbol{r}_2  \, \mathrm{d} \boldsymbol{r}_1 
+.\] 
+
