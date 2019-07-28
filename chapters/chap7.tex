@@ -36,6 +36,56 @@ For a more general case,
 	g_1 g_2 & = \exp \left( -\xi |\bar{AB} |^2  \right) \exp \left( -\zeta |\boldsymbol{r} - \boldsymbol{P} | ^2 \right) \times \\
 		& \prod_{k=x,y,z}\left[ \sum_{i=0}^{a_k + b_k} (x-P_x)^i f_i(a_k, b_k, \boldsymbol{PA}_k,\boldsymbol{PB}_k)\right] 
 \end{align*}
+
+The first obvious step when attempting to combine the Gaussian functions is to substitute the exponential term
+\[
+	g_1 g_2 = \exp \left\{ -\xi |\bar{AB}| ^2  \right\} \exp \left\{ -\zeta |\boldsymbol{r}-\boldsymbol{P}| ^2 \right\} \times A(a_i,b_i)
+.\] 
+where $A(a_i,b_i)$ represents the angular part,
+ \[
+	 A(a_i, b_i) = \prod_{k=x,y,z} (k-A_k)^{a_k + b_k} 
+.\] 
+Terms $k-A_k)^{a_k}$ must be expressed using a binomial expansion
+ \[
+	 (x-A_x)^{a_x} = [ (x-P_x) + \boldsymbol{PA}_x]^{a_x} \sum_{i=0}^{a_x} 
+	 \begin{pmatrix}
+	 	a_x \\
+		i
+	 \end{pmatrix}
+	 (x-P_x)^i \boldsymbol{PA}_x ^{a_x-i}
+.\] 
+and this allows everything to be shifted to the new center $\boldsymbol{P}$. Products of such terms of the same Cartesian coordinate can be thus be represented as follows
+\[
+\begin{aligned}
+	(x-A_x)^{a_x} (x-B_x)^{b_x} &= \sum_{i=0}^{a_x}
+	\begin{pmatrix}
+		a_x \\
+		i
+	\end{pmatrix}
+	(x-P_x)^i \boldsymbol{PA} ^{a_x - i}  \times \sum
+	\begin{pmatrix}
+		b_x \\
+		j
+	\end{pmatrix}
+	(x-P_x)^j \boldsymbol{PB}_x ^{b_x-j} \\
+				    &= \sum_0^{a_x + b_x} (x-P_x)^k f_k(a_x,b_x,\boldsymbol{PA}_x, \boldsymbol{PB}_x)
+\end{aligned}
+.\] 
+where
+\[
+	f_k(a_x,b_x,\boldsymbol{PA}_x,\boldsymbol{PB}_x) = \sum_{i=0}^k 
+	\begin{pmatrix}
+		a_x \\
+		i
+	\end{pmatrix}
+	\begin{pmatrix}
+		b_x \\
+		k-i
+	\end{pmatrix}
+	\boldsymbol{PA}_x^{a_x - i} \boldsymbol{PB}_x^{b_x - k + i}
+.\] 
+
+
 When applied to integrals the GPT can be used to reduce a four-index integral to a sum of three-index integrals
 \[
 	\langle ab | r_{12}^{-1} | cd \rangle = T_p^{ab} \langle p | r_{12}^{-1} | cd \rangle 
@@ -56,7 +106,7 @@ Integrals of the form
 .\] 
 and 
 \[
-	\int ^\infty_{-\infty}  u^i \exp \left\{ -\zeta u^2 \right\} \, \mathrm{d}u = \frac{(i-1)!!}{2\zeta^{\frac{i}{2}} \left( \frac{\pi}{\zeta} \right) ^{\frac{1}{2}} 
+	\int ^\infty_{-\infty}  u^i \exp \left\{ -\zeta u^2 \right\} \, \mathrm{d}u = \frac{(i-1)!!}{2\zeta^{\frac{i}{2}} }\left( \frac{\pi}{\zeta} \right) ^{\frac{1}{2}} 
 .\] 
 if $i$ is even and zero otherwise. 
 
@@ -74,8 +124,36 @@ The recurrence relation for increasing angular momentum for $| a \rangle $ is as
 .\] 
 where $1_i$ represents  $\delta_{ik}$, with $k$ being the flexible index.
 
+The starting case for the recurrence relation is given by
+\[
+	\langle \boldsymbol{0}_A | \boldsymbol{0}_B \rangle = \left( \frac{\pi}{\zeta} \right) ^{\frac{3}{2}} \exp \left\{ - \xi | \bar{AB} | ^2 \right\} 
+.\] 
+
 The Coulomb integrals are defined as
 \[
 	\langle a | \frac{1}{r_{12}} | b \rangle = \int \int g(\boldsymbol{r}_1,\alpha,\boldsymbol{a},\boldsymbol{A}) \frac{1}{r_{12}} g(\boldsymbol{r}_2,\beta, \boldsymbol{b},\boldsymbol{B}) \, \mathrm{d}\boldsymbol{r}_2  \, \mathrm{d} \boldsymbol{r}_1 
 .\] 
+The recursion relation is given by
+\[
+	\langle a + 1_i | \frac{1}{r_{12}} | b \rangle = \boldsymbol{PA}_i \langle a | \frac{1}{r_{12}} | b \rangle ^{(m+1)} + \frac{a_i}{2\alpha} \left\{ \langle a-1_i | \frac{1}{r_{12}} | b \rangle ^{(m)} - \frac{\beta}{\zeta}\langle a - 1_i | \frac{1}{r_{12}} | b \rangle ^{(m+1)}\right\} + \frac{b_i}{2\xi} \langle a | \frac{1}{r_{12}} | b - 1_i \rangle ^{(m+1)} 
+.\] 
+where
+\[
+\xi = \frac{\alpha \beta}{\zeta}
+.\] 
+The starting case for the recurrence relation is given by
+\[
+	\langle s | \frac{1}{r_{12}} | s \rangle ^{(m)} = \frac{2\pi ^{\frac{5}{2}}}{\alpha \beta \frac{\zeta^1}{2}} F_m(T)
+.\] 
+where
+\[
+	T = \xi |\bar{AB} | ^2
+.\] 
+and 
+\[
+	F_m (T) = \int ^1_0 t^{2m} \exp \left\{ - T t^2 \right\}  \, \mathrm{d}t 
+.\] 
+The integral denoted by the function $F_m(T)$ is known as the Boys function and is evaluated through standard methods.
+
+
 
