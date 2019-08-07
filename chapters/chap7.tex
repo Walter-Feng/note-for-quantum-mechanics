@@ -11,6 +11,7 @@ But here a simple $| a \rangle $ is denoted. the  $\boldsymbol{a}$ represents th
 	\boldsymbol{a} = (a_x,a_y,a_z)
 .\] 
 
+\section{Basic concepts}
 \begin{theorem}
 	The product of two Gaussian functions,
 	\[
@@ -99,7 +100,16 @@ and GPT being used once again,
 	\langle ab | r_{12}^{-1} | cd \rangle = T_p^{ab} t_q^{cd} \langle p | r_{12}^{-1} | q \rangle  
 .\] 
 
-
+\section{Overlap Integrals}
+Overlap integrals,
+\[
+	\langle \boldsymbol{a} | \boldsymbol{b} \rangle = \int g(\boldsymbol{r},\alpha, a, \boldsymbol{A}) g(\boldsymbol{r},\beta,b,\boldsymbol{B}) \, \mathrm{d}\boldsymbol{r} 
+.\] 
+can be decomposed as
+\[
+	\langle \boldsymbol{a}+\boldsymbol{b}_i | \boldsymbol{b} \rangle =\frac{1}{2\alpha}\frac{\partial }{\partial A_i} \langle \boldsymbol{a} | \boldsymbol{b} \rangle + \frac{a_i}{2\alpha} \langle \boldsymbol{a}-\boldsymbol{1}_i | \boldsymbol{b} \rangle 
+.\] 
+The integral $\langle \boldsymbol{a} | \boldsymbol{b} \rangle $ can be factored using the GPT.
 Integrals of the form
 \[
 	\int ^\infty _{-\infty} dx (x-P_x)^i \exp \left\{ - \zeta (x-P_x)^2 \right\}  \, \mathrm{d}x = \int ^\infty_{-\infty} du u^i \exp \left\{ - \zeta u^2 \right\} \, \mathrm{d} u 
@@ -110,7 +120,7 @@ and
 .\] 
 if $i$ is even and zero otherwise. 
 
-Now all \hat{t} is needed is to evaluate
+Now all that is needed is to evaluate
 \[
 \frac{1}{2\alpha} \frac{\partial }{\partial A_i}  \langle \boldsymbol{a} | \boldsymbol{b} \rangle 
 .\] 
@@ -129,6 +139,7 @@ The starting case for the recurrence relation is given by
 	\langle \boldsymbol{0}_A | \boldsymbol{0}_B \rangle = \left( \frac{\pi}{\zeta} \right) ^{\frac{3}{2}} \exp \left\{ - \xi | \bar{AB} | ^2 \right\} 
 .\] 
 
+\section{Coulomb Integrals}
 The Coulomb integrals are defined as
 \[
 	\langle a | \frac{1}{r_{12}} | b \rangle = \int \int g(\boldsymbol{r}_1,\alpha,\boldsymbol{a},\boldsymbol{A}) \frac{1}{r_{12}} g(\boldsymbol{r}_2,\beta, \boldsymbol{b},\boldsymbol{B}) \, \mathrm{d}\boldsymbol{r}_2  \, \mathrm{d} \boldsymbol{r}_1 
@@ -155,5 +166,25 @@ and
 .\] 
 The integral denoted by the function $F_m(T)$ is known as the Boys function and is evaluated through standard methods.
 
+\section{Gaussian Integrals}
 
+\[
+	\langle a | e^{-\gamma r_{12}^2} | b \rangle =\int \int g(\boldsymbol{r}_1,\alpha,\boldsymbol{a},\boldsymbol{A}) e^{-\gamma r_{12}^2} g(\boldsymbol{r}_2,\beta,\boldsymbol{b},\boldsymbol{B}) \, \mathrm{d}\boldsymbol{r}_1  \, \mathrm{d}\boldsymbol{r}_2 
+.\] 
+When considering the evaluation of G type integrals it is important to realize that the Gaussian gemial function itself can be written as a Cartesian Gaussian function with zero angular momentum
+\[
+	e^{-\gamma r_{12}^2} = g(\boldsymbol{r}_1, \gamma, \mathsymbol{0}, \boldsymbol{r}_2) \equiv g_{12}^\gamma
+.\] 
+The strategy for evaluating the integral is similar to that for the electron repulsion integrals by Obara and Saika. On inspection of the definition of G type integral it is clear that the expression can be integrated in two distinct steps over coordinates $\boldsymbol{r}_1$ and $\boldsymbol{r}_2$. The order of integration is entirely arbitrary and here the choice is made to integrate with respect to $\boldsymbol{r}_1$ first:
+\[
+	\langle \boldsymbol{a} + \boldsymbol{1}_i | g_{12}^{\gamma}  | b  \rangle = \int g(\boldsymbol{r}_2,\beta, \boldsymbol{b},\boldsymbol{B}) \langle \boldsymbol{a} + \mathsymbol{1}_i | g_{12} ^\gamma  \rangle \, \mathrm{d}\boldsymbol{r}_2 
+.\] 
+The integral over the coordinate space of $| \boldsymbol{a} \rangle $ is a known result and is given the recurrence relation. As $g_{12}^\gamma$ has zero angular momentum the last term of the recurrence relation vanishes and this results in a two term recurrence relation
+\[
+	\langle \boldsymbol{a} + \mathsymbol{1}_i | g_{12}^\gamma \rangle = (P_{A_i} - A_i) \langle \boldsymbol{a} | g_{12}^\gamma \rangle + \frac{a_i}{2 \zeta_a} \langle \boldsymbol{a} - \boldsymbol{1}_i | g_{12}^\gamma \rangle 
+.\] 
+where
+\[
+	\zeta_a = \alpha + \gamma \quad \text{and} \boldsymbol{P}_A = \frac{\alpha \boldsymbol{A} + \gamma \boldsymbol{r}_2}{\zeta_a}
+.\] 
 
